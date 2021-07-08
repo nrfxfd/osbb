@@ -2,11 +2,8 @@ class AppartmentsController < ApplicationController
   #   http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
 
   def index
-<<<<<<< HEAD
+
     @appartments = 'appartment.all, CRUD'
-=======
-    @appartments = 'appartment.all'
->>>>>>> origin/develop
   end
 
   def show
