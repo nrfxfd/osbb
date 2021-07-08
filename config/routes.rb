@@ -11,8 +11,5 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments
   end
-  #get "/about", to: "about#about"
-  #get "/articles", to: "articles#index"
-
-  #get "/login", to: "login#login"
+ 
 end
