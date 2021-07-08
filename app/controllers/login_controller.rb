@@ -1,4 +1,5 @@
 class LoginController < ApplicationController
-  def login
+  def index
+    @login = 'Autorization'
   end
 end
