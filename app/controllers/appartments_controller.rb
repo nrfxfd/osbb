@@ -4,6 +4,7 @@ class AppartmentsController < ApplicationController
   def index
 
     @appartments = 'appartment.all, CRUD'
+
   end
 
   def show
