@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  appartm: 1
+  owner_id: 1
+  area_apprtmnt: 9.99
+  previus_water: 9.99
+  previus_electricity: 9.99
+  previus_date: 2021-07-12
+  update_water: 9.99
+  update_electricity: 9.99
+  arears: 9.99
+
+two:
+  appartm: 1
+  owner_id: 1
+  area_apprtmnt: 9.99
+  previus_water: 9.99
+  previus_electricity: 9.99
+  previus_date: 2021-07-12
+  update_water: 9.99
+  update_electricity: 9.99
+  arears: 9.99

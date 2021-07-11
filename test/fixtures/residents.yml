@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  appartm: 1
+  lastname: MyText
+  name_: MyText
+  surnamename: MyText
+  telephone: MyText
+  birthday: 2021-07-12
+  owner_: false
+  tenant: false
+
+two:
+  appartm: 1
+  lastname: MyText
+  name_: MyText
+  surnamename: MyText
+  telephone: MyText
+  birthday: 2021-07-12
+  owner_: false
+  tenant: false

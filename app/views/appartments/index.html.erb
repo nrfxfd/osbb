@@ -1,3 +1,14 @@
 <h1>Appartments</h1>
-<h1><%= @appartments %></h1>
+
+
+<ul>
+  <% @appartments .each do |appartment| %>
+    <li>
+      <%= appartment.appartm %> '<%= appartment.owner_id %>' <%= appartment.area_apprtmnt %> <%= appartment.previus_water %> <%= appartment.previus_electricity %> <%= appartment.update_water %> <%= appartment.update_electricity %> <%= appartment.arears%>
+    </li>
+  <% end %>
+</ul>
+
+
+
 

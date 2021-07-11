@@ -1,2 +1,8 @@
-<h1>Residents#index</h1>
-<p>Find me in app/views/residents/index.html.erb</p>
+<h1>Residents</h1>
+<ul>
+  <% @residents .each do |resident| %>
+    <li>
+      <%= resident.appartm %> <%= resident.lastname %> <%= resident.name_ %> <%= resident.surname %> <%= resident.telephone %> <%= resident.birthday %> <%= resident.owner_ %> <%= resident.tenant %>
+    </li>
+  <% end %>
+</ul>
