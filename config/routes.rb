@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-
-  get 'residents/index'
-  get 'appartments/index'
   root "home#index", as: 'home'
 
+
+  get 'residents/index'
   get "/video", to: "video#index"
   get "/login", to: "login#index"
 

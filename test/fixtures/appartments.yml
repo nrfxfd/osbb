@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  apprtmnt: 1
+  owner_name: MyText
+  owner_lastname: MyText
+  area_of_apprtmnt: 1.5
+  previus_water: 1.5
+  previus_electricity: 1.5
+  previus_date: 2021-07-10
+  update_water: 1.5
+  update_electricity: 1.5
+  arrears: 1.5
+
+two:
+  apprtmnt: 1
+  owner_name: MyText
+  owner_lastname: MyText
+  area_of_apprtmnt: 1.5
+  previus_water: 1.5
+  previus_electricity: 1.5
+  previus_date: 2021-07-10
+  update_water: 1.5
+  update_electricity: 1.5
+  arrears: 1.5
