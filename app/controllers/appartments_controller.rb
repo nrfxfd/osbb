@@ -7,15 +7,15 @@ class AppartmentsController < ApplicationController
   end
 
   def show
-    @appartments = Appartment.find(params[:id])
+    @appartment = Appartment.find(params[:id])
   end
 
   def new
-    @appartments = Appartment.new
+    @appartment = Appartment.new
   end
 
   def create
-    @appartments = Appartment.new(appartment_params)
+    @appartment = Appartment.new(appartment_params)
 
     if @appartment.save
       redirect_to @appartment
@@ -25,11 +25,11 @@ class AppartmentsController < ApplicationController
   end
 
   def edit
-    @appartments = Appartment.find(params[:id])
+    @appartment = Appartment.find(params[:id])
   end
 
   def update
-    @appartments = Appartment.find(params[:id])
+    @appartment = Appartment.find(params[:id])
 
     if @appartment.update(article_params)
       redirect_to @appartment
@@ -39,7 +39,7 @@ class AppartmentsController < ApplicationController
   end
 
   def destroy
-    @appartments = Appartment.find(params[:id])
+    @appartment = Appartment.find(params[:id])
     @appartment.destroy
 
     redirect_to @appartment_path
@@ -47,7 +47,7 @@ class AppartmentsController < ApplicationController
 
   private
   def appartment_params
-    params.require(:appartment).permit(:title, :body, :status)
+    params.require(:appartment).permit(:apprtmnt, :arears, :status)
   end
 
 end

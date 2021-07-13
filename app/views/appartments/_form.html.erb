@@ -1,6 +1,6 @@
 <%= form_with model: appartment do |form| %>
   <div>
-    <%= form.label :appartm %><br>
+    <%= form.label :'Номер квартири'%><br>
     <%= form.text_field(:appartm,{:class => 'form-control'}) %>
     <% appartment.errors.full_messages_for(:appartm).each do |message| %>
       <div class="alert alert-danger"><%= message %></div>
@@ -8,15 +8,42 @@
   </div>
 
   <div>
-    <%= form.label :area_apprtmnt %><br>
-    <%= form.text_area(:area_apprtmnt,{:class => 'form-control'})%><br>
+    <%= form.label :'Площа квартири' %><br>
+    <%= form.text_field(:area_apprtmnt,{:class => 'form-control'})%><br>
     <% appartment.errors.full_messages_for(:area_apprtmnt).each do |message| %>
       <div class="alert alert-danger"><%= message %></div>
     <% end %>
   </div>
 
   <div>
+    <%= form.label :'Показник лічильніка води' %><br>
+    <%= form.text_field(:previus_water,{:class => 'form-control'})%><br>
+    <% appartment.errors.full_messages_for(:previus_water).each do |message| %>
+      <div class="alert alert-danger"><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :'Показник лічильніка електроенергії' %><br>
+    <%= form.text_field(:previus_electricity,{:class => 'form-control'})%><br>
+    <% appartment.errors.full_messages_for(:previus_electricity).each do |message| %>
+      <div class="alert alert-danger"><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :'Заборгованість' %><br>
+    <%= form.text_field(:arears,{:class => 'form-control'})%><br>
+    <% appartment.errors.full_messages_for(:arears).each do |message| %>
+      <div class="alert alert-danger"><%= message %></div>
+    <% end %>
+  </div>
+
+
+  <div>
     <%= form.submit ({:class => 'btn btn-success'})%>
   </div>
 
 <% end %>
+
+
