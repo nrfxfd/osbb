@@ -47,7 +47,7 @@ class AppartmentsController < ApplicationController
 
   private
   def appartment_params
-    params.require(:appartment).permit(:apprtmnt, :arears, :status)
+    params.require(:appartment).permit
   end
 
 end

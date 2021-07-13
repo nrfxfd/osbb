@@ -45,7 +45,7 @@ class ResidentsController < ApplicationController
 
   private
   def appartment_params
-    params.require(:resident).permit(:name, :lastname, :status)
+    params.require(:resident).permit
   end
 
 end
