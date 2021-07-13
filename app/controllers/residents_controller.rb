@@ -29,7 +29,7 @@ class ResidentsController < ApplicationController
   def update
     @resident = Resident.find(params[:id])
 
-    if @resident = Resident.update(article_params)
+    if @resident = Resident.update(resident_params)
       redirect_to @resident
     else
       render :edit, status: :unprocessable_entity
@@ -44,7 +44,7 @@ class ResidentsController < ApplicationController
   end
 
   private
-  def appartment_params
+  def resident_params
     params.require(:resident).permit
   end
 

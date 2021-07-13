@@ -1,10 +1,10 @@
-<h2><%= @resident.resident_id %></h2>
+<h2><%= @resident.id%></h2>
 
 
-<p><%= @resident.appartm %><%= @resident.name %> <%= @resident.lastname %> <%= @resident.surname %> <%= @resident.telephone %> <%= @resident.birthday %> <%= @resident.owner %> <%= @resident.tenant %> <%= @appartment.appartment_id%></p>
+<p><%= @resident.appartm %> <%= @resident.name %> <%= @resident.lastname %> <%= @resident.surname %> <%= @resident.telephone %> <%= @resident.birthday %> <%= @resident.owner %> <%= @resident.tenant %> </p>
 <ul>
-  <li><%= link_to "Редагувати", edit_appartment_path(@article) %></li>
-  <li><%= link_to "Видалити", appartment_path(@article),
+  <li><%= link_to "Редагувати", edit_resident_path(@resident) %></li>
+  <li><%= link_to "Видалити", resident_path(@resident),
                   method: :delete,
                   data: { confirm: "Are you sure?" } %></li>
 </ul>
