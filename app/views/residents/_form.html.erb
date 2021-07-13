@@ -32,7 +32,7 @@
 
   <div>
     <%= form.label :'Телефон' %><br>
-    <%= form.text_field(:telephone,{:class => 'form-control'})%><br>
+    <%= form.telephone_field(:telephone,{:class => 'form-control'})%><br>
     <% resident.errors.full_messages_for(:telephone).each do |message| %>
       <div class="alert alert-danger"><%= message %></div>
     <% end %>
@@ -40,33 +40,21 @@
 
   <div>
     <%= form.label :'День народження' %><br>
-    <%= form.text_field(:birthday,{:class => 'form-control'})%><br>
-    <% resident.errors.full_messages_for(:birthday).each do |message| %>
-      <div class="alert alert-danger"><%= message %></div>
-    <% end %>
+    <%= form.date_field(:birthday,{:class => 'form-control'})%><br>
   </div>
 
   <div>
     <%= form.label :'Чи є власником квартири?' %><br>
-    <%= form.text_field(:owner,{:class => 'form-control'})%><br>
-    <% resident.errors.full_messages_for(:owner).each do |message| %>
-      <div class="alert alert-danger"><%= message %></div>
-    <% end %>
+    <%= form.check_box ( :owner) %><br>
   </div>
 
   <div>
     <%= form.label :'Чи є орендарем квартири?' %><br>
-    <%= form.text_field(:tenant,{:class => 'form-control'})%><br>
-    <% resident.errors.full_messages_for(:tenant).each do |message| %>
-      <div class="alert alert-danger"><%= message %></div>
-    <% end %>
+    <%= form.check_box(:tenant)%><br>
   </div>
-
-
 
 
   <div>
     <%= form.submit ({:class => 'btn btn-success'})%>
   </div>
-
 <% end %>
