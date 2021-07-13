@@ -2,7 +2,8 @@
 <ul>
   <% @residents .each do |resident| %>
     <li>
-      <%= resident.appartm %> <%= resident.lastname %> <%= resident.name_ %> <%= resident.surname %> <%= resident.telephone %> <%= resident.birthday %> <%= resident.owner_ %> <%= resident.tenant %>
+      <%= resident.appartm %> <%= resident.lastname %> <%= resident.name %> <%= resident.surname %> <%= resident.telephone %> <%= resident.birthday %> <%= resident.owner %> <%= resident.tenant %> <%= resident.appartment_id %>
     </li>
   <% end %>
 </ul>
+

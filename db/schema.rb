@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_10_152937) do
+ActiveRecord::Schema.define(version: 2021_07_13_165248) do
 
-  create_table "appartments", primary_key: "appartm", force: :cascade do |t|
+  create_table "appartments", force: :cascade do |t|
+    t.integer "appartm"
     t.integer "owner_id"
     t.decimal "area_apprtmnt"
     t.decimal "previus_water"
@@ -21,8 +22,8 @@ ActiveRecord::Schema.define(version: 2021_07_10_152937) do
     t.decimal "update_water"
     t.decimal "update_electricity"
     t.decimal "arears"
-    t.check_constraint "update_electricity > previus_electricity", name: "electricity_check"
-    t.check_constraint "update_water > previus_water", name: "water_check"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "articles", force: :cascade do |t|
@@ -49,16 +50,21 @@ ActiveRecord::Schema.define(version: 2021_07_10_152937) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "residents", id: false, force: :cascade do |t|
+  create_table "residents", force: :cascade do |t|
     t.integer "appartm"
     t.text "lastname"
-    t.text "name_"
+    t.text "name"
     t.text "surname"
     t.text "telephone"
     t.date "birthday"
-    t.boolean "owner_"
+    t.boolean "owner"
     t.boolean "tenant"
+    t.integer "appartment_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["appartment_id"], name: "index_residents_on_appartment_id"
   end
 
   add_foreign_key "comments", "articles"
+  add_foreign_key "residents", "appartments"
 end

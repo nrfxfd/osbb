@@ -3,19 +3,21 @@
 one:
   appartm: 1
   lastname: MyText
-  name_: MyText
-  surnamename: MyText
+  name: MyText
+  surname: MyText
   telephone: MyText
   birthday: 2021-07-12
-  owner_: false
+  owner: false
   tenant: false
+  appartment: one
 
 two:
   appartm: 1
   lastname: MyText
-  name_: MyText
-  surnamename: MyText
+  name: MyText
+  surname: MyText
   telephone: MyText
   birthday: 2021-07-12
-  owner_: false
+  owner: false
   tenant: false
+  appartment: two

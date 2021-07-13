@@ -1,0 +1,11 @@
+<h2><%= @appartment.appartm %></h2>
+
+
+<p><%= @appartment.appartm %> '<%= @appartment.owner_id %>' <%= @appartment.area_apprtmnt %> <%= @appartment.previus_water %> <%= @appartment.previus_electricity %> <%= @appartment.update_water %> <%= @appartment.update_electricity %> <%= @appartment.arears%></p>
+<ul>
+  <li><%= link_to "Редагувати", edit_appartment_path(@article) %></li>
+  <li><%= link_to "Видалити", appartment_path(@article),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
+</ul>
+
