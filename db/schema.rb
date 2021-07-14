@@ -12,20 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2021_07_13_165248) do
 
-  create_table "appartments", force: :cascade do |t|
-    t.integer "appartm"
-    t.integer "owner_id"
-    t.decimal "area_apprtmnt"
-    t.decimal "previus_water"
-    t.decimal "previus_electricity"
-    t.date "previus_date"
-    t.decimal "update_water"
-    t.decimal "update_electricity"
-    t.decimal "arears"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -50,21 +36,5 @@ ActiveRecord::Schema.define(version: 2021_07_13_165248) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "residents", force: :cascade do |t|
-    t.integer "appartm"
-    t.text "lastname"
-    t.text "name"
-    t.text "surname"
-    t.text "telephone"
-    t.date "birthday"
-    t.boolean "owner"
-    t.boolean "tenant"
-    t.integer "appartment_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["appartment_id"], name: "index_residents_on_appartment_id"
-  end
-
   add_foreign_key "comments", "articles"
-  add_foreign_key "residents", "appartments"
 end
