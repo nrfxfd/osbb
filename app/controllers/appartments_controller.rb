@@ -18,7 +18,7 @@ class AppartmentsController < ApplicationController
     @appartment = Appartment.new(appartment_params)
 
     if @appartment.save
-      redirect_to @appartment
+      redirect_to appartment_path@appartment
     else
       render :new, status: :unprocessable_entity
     end
@@ -31,8 +31,8 @@ class AppartmentsController < ApplicationController
   def update
     @appartment = Appartment.find(params[:id])
 
-    if @appartment.update(article_params)
-      redirect_to @appartment
+    if @appartment.update(appartment_params)
+      redirect_to appartment_path@appartment
     else
       render :edit, status: :unprocessable_entity
     end
@@ -42,7 +42,7 @@ class AppartmentsController < ApplicationController
     @appartment = Appartment.find(params[:id])
     @appartment.destroy
 
-    redirect_to @appartment_path
+    redirect_to appartments_path
   end
 
   private

@@ -16,7 +16,7 @@ class ResidentsController < ApplicationController
     @resident = Resident.new(resident_params)
 
     if @resident.save
-      redirect_to @resident
+      redirect_to resident_path@resident
     else
       render :new, status: :unprocessable_entity
     end
@@ -30,7 +30,7 @@ class ResidentsController < ApplicationController
     @resident = Resident.find(params[:id])
 
     if @resident = Resident.update(resident_params)
-      redirect_to @resident
+      redirect_to resident_path@resident
     else
       render :edit, status: :unprocessable_entity
     end
@@ -40,7 +40,7 @@ class ResidentsController < ApplicationController
     @resident = Resident.find(params[:id])
     @resident.destroy
 
-    redirect_to @resident_path
+    redirect_to residents_path
   end
 
   private
