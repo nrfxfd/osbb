@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  apartment_number: 1
+  apartment_area: 9.99
+  water_is_paid: 9.99
+  electricity_is_paid: 9.99
+  current_meters_water: 9.99
+  current_meter_electricity: 9.99
+  arrears: 9.99
+
+two:
+  apartment_number: 1
+  apartment_area: 9.99
+  water_is_paid: 9.99
+  electricity_is_paid: 9.99
+  current_meters_water: 9.99
+  current_meter_electricity: 9.99
+  arrears: 9.99
