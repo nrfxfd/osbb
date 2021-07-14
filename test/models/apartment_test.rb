@@ -1,6 +1,6 @@
 require "test_helper"
 
-class ResidentsControllerTest < ActionDispatch::IntegrationTest
+class ApartmentTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

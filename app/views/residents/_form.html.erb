@@ -1,0 +1,58 @@
+<%= form_with model: resident do |form| %>
+
+  <div>
+    <%= form.label :'№ квартири'%><br>
+    <%= form.number_field :apartment_number, in: 1..77%>
+  </div>
+
+  <div>
+    <%= form.label :'Прізвище' %><br>
+    <%= form.text_field(:lastname,{:class => 'form-control'})%><br>
+    <% resident.errors.full_messages_for(:name).each do |message| %>
+      <div class="alert alert-danger"><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :"Ім'я" %><br>
+    <%= form.text_field(:name,{:class => 'form-control'})%><br>
+    <% resident.errors.full_messages_for(:lastname).each do |message| %>
+      <div class="alert alert-danger"><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :'По батькові' %><br>
+    <%= form.text_field(:surname,{:class => 'form-control'})%><br>
+    <% resident.errors.full_messages_for(:surname).each do |message| %>
+      <div class="alert alert-danger"><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :'Телефон' %><br>
+    <%= form.telephone_field(:phone,{:class => 'form-control'})%><br>
+    <% resident.errors.full_messages_for(:telephone).each do |message| %>
+      <div class="alert alert-danger"><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :'День народження' %><br>
+    <%= form.date_field(:birthday,{:class => 'form-control'})%><br>
+  </div>
+
+  <div>
+    <%= form.label :'Чи є власником квартири?' %><br>
+    <%= form.check_box( :owner) %><br>
+  </div>
+
+  <div>
+    <%= form.label :'Чи є орендарем квартири?' %><br>
+    <%= form.check_box(:tenant)%><br>
+  </div>
+
+
+  <div>
+    <%= form.submit ({:class => 'btn btn-success'})%>
+  </div>
+<% end %>

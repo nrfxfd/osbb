@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   get "/login", to: "login#index"
 
   resources :documents
-  resources :appartments
+  resources :apartments
+  resources :residents
+
   resources :articles do
     resources :comments
   end
