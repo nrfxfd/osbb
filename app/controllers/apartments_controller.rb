@@ -17,7 +17,7 @@ class ApartmentsController < ApplicationController
     @apartment = Apartment.new(apartment_params)
 
     if @apartment.save
-      redirect_to apartment_path @apartment
+      redirect_to apartment_path@apartment
     else
       render :new, status: :unprocessable_entity
     end
@@ -31,7 +31,7 @@ class ApartmentsController < ApplicationController
     @apartment = Apartment.find(params[:id])
 
     if @apartment.update(apartment_params)
-      redirect_to apartment_path @apartment
+      redirect_to apartment_path@apartment
     else
       render :edit, status: :unprocessable_entity
     end
@@ -46,7 +46,9 @@ class ApartmentsController < ApplicationController
 
   private
   def apartment_params
-    params.require(:apartment).permit
+    params.require(:apartment).permit( :apartment_number, :apartment_area,
+                                       :water_is_paid,:electricity_is_paid,
+                                       :current_meters_water,:current_meter_electricity,:arrears)
   end
 
 end
