@@ -1,6 +1,6 @@
 <h2><%= @resident.id%></h2>
 
-
+<h5>№ квартири прізвище   ім'я   по батькові  телефон день народження власник квартири орендар квартири</h5>
 <p><%= @resident.apartment_number %> <%= @resident.lastname %> <%= @resident.name %> <%= @resident.surname %> <%= @resident.phone %> <%= @resident.birthday %> <%= @resident.owner %> <%= @resident.tenant %> </p>
 <ul>
   <li><%= link_to "Редагувати", edit_resident_path(@resident) %></li>

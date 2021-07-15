@@ -30,7 +30,7 @@ class ApartmentsController < ApplicationController
   def update
     @apartment = Apartment.find(params[:id])
 
-    if @apartment.update(apartment_params)
+    if @apartment.update(apartment_params )
       redirect_to apartment_path @apartment
     else
       render :edit, status: :unprocessable_entity
@@ -45,8 +45,11 @@ class ApartmentsController < ApplicationController
   end
 
   private
+
   def apartment_params
-    params.require(:apartment).permit
+    params.require(:apartment).permit( :apartment_number, :apartment_area,
+                                       :water_is_paid,:electricity_is_paid,
+                                       :current_meters_water,:current_meter_electricity,:arrears)
   end
 
 end

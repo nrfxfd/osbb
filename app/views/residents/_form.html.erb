@@ -2,38 +2,32 @@
 
   <div>
     <%= form.label :'№ квартири'%><br>
-    <%= form.number_field :apartment_number, in: 1..77%>
+    <%= form.number_field :apartment_number, in: 1..99%>
+  </div>
+
+  <div>
+    <%= form.label :'apartment_id'%><br>
+    <%= form.number_field :apartment_id, in: 1..99%>
   </div>
 
   <div>
     <%= form.label :'Прізвище' %><br>
     <%= form.text_field(:lastname,{:class => 'form-control'})%><br>
-    <% resident.errors.full_messages_for(:name).each do |message| %>
-      <div class="alert alert-danger"><%= message %></div>
-    <% end %>
   </div>
+
   <div>
     <%= form.label :"Ім'я" %><br>
     <%= form.text_field(:name,{:class => 'form-control'})%><br>
-    <% resident.errors.full_messages_for(:lastname).each do |message| %>
-      <div class="alert alert-danger"><%= message %></div>
-    <% end %>
   </div>
 
   <div>
     <%= form.label :'По батькові' %><br>
     <%= form.text_field(:surname,{:class => 'form-control'})%><br>
-    <% resident.errors.full_messages_for(:surname).each do |message| %>
-      <div class="alert alert-danger"><%= message %></div>
-    <% end %>
   </div>
 
   <div>
     <%= form.label :'Телефон' %><br>
     <%= form.telephone_field(:phone,{:class => 'form-control'})%><br>
-    <% resident.errors.full_messages_for(:telephone).each do |message| %>
-      <div class="alert alert-danger"><%= message %></div>
-    <% end %>
   </div>
 
   <div>

@@ -1,5 +1,8 @@
 <h1>Мешканці будинку</h1>
+
+
 <ul>
+  <h5>№ квартири  прізвище   ім'я   по батькові  телефон день народження власник квартири орендар квартири</h5>
   <% @residents .each do |resident| %>
     <li>
       <%= link_to resident.id, resident %> <%= resident.apartment_number %> <%= resident.lastname %> <%= resident.name %> <%= resident.surname %> <%= resident.phone %> <%= resident.birthday %> <%= resident.owner %> <%= resident.tenant %>

@@ -1,6 +1,6 @@
 <h2>Квартира № <%= @apartment.apartment_number %></h2>
 
-
+<h6> № площа сплачено:вода сплачено:електроенергія показник:вода показник:електроенергія  баланс</h6>
 <p><%= @apartment.apartment_number%> <%= @apartment.apartment_area %> <%= @apartment.water_is_paid %> <%= @apartment.electricity_is_paid %> <%= @apartment.current_meters_water %> <%= @apartment.current_meter_electricity %> <%= @apartment.arrears %> </p>
 <ul>
   <li><%= link_to "Редагувати", edit_apartment_path(@apartment) %></li>
