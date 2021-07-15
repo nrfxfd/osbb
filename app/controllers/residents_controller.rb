@@ -14,8 +14,14 @@ class ResidentsController < ApplicationController
 
   def create
     @resident = Resident.new(resident_params)
-    redirect_to resident_path(@resident)
+
+    if @resident.save
+      redirect_to resident_path @resident
+    else
+      render :new, status: :unprocessable_entity
     end
+  end
+
   def edit
     @resident = Resident.find(params[:id])
   end
@@ -23,8 +29,8 @@ class ResidentsController < ApplicationController
   def update
     @resident = Resident.find(params[:id])
 
-    if @resident = Resident.update(resident_params)
-      redirect_to resident_path@resident
+    if @resident.update(resident_params)
+      redirect_to resident_path @resident
     else
       render :edit, status: :unprocessable_entity
     end
@@ -39,8 +45,8 @@ class ResidentsController < ApplicationController
 
   private
   def resident_params
-    params.require(:resident).permit( :apartment_number, :lastname,:name,
-                                      :surname, :phone, :birthday, :owner, :tenant)
+    params.require(:resident).permit( :apartment_number, :lastname, :name,
+                                      :surname, :phone, :birthday, :owner, :tenant, :apartment_id)
   end
 
 end
