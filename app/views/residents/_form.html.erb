@@ -1,13 +1,8 @@
-<%= form_with model: resident do |form| %>
+<%= form_with model: [ @apartment, @apartment.residents.build] do |form| %>
 
   <div>
     <%= form.label :'№ квартири'%><br>
-    <%= form.number_field :apartment_number, in: 1..99%>
-  </div>
-
-  <div>
-    <%= form.label :'apartment_id'%><br>
-    <%= form.number_field :apartment_id, in: 1..99%>
+    <%= form.number_field :apartment_number, is: 1..99%>
   </div>
 
   <div>

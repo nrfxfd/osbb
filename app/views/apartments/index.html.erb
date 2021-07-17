@@ -4,7 +4,7 @@
 <ul>
   <% @apartments .each do |apartment| %>
     <li>
-      <%= link_to apartment.apartment_number, apartment %>  <%= apartment.apartment_area %> <%= apartment.water_is_paid %> <%= apartment.electricity_is_paid %> <%= apartment.current_meters_water%> <%= apartment.current_meter_electricity %> <%= apartment.arrears%>
+      <%= link_to apartment.apartment_number, apartment %>  <%= apartment.id %> <%= apartment.apartment_area %> <%= apartment.water_is_paid %> <%= apartment.electricity_is_paid %> <%= apartment.current_meters_water%> <%= apartment.current_meter_electricity %> <%= apartment.arrears%>
     </li>
   <% end %>
 </ul>

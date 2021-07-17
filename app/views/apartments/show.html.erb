@@ -9,3 +9,12 @@
                   data: { confirm: "Are you sure?" } %></li>
 </ul>
 
+<h3>Мешканці квартири № <%= @apartment.apartment_number %></h3>
+<h6>№ квартири  прізвище   ім'я   по батькові  телефон день народження власник квартири орендар квартири</h6>
+<%= render @apartment.residents %>
+
+
+<h5>Додати мешканця у кв.№<%= @apartment.apartment_number %></h5>
+<%= render 'residents/form' %>
+
+
