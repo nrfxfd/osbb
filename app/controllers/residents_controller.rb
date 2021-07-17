@@ -1,46 +1,43 @@
 class ResidentsController < ApplicationController
-  def index
 
-    @residents = Resident.all
-
-  end
   def show
-    @resident = Resident.find(params[:id])
+    @apartment = Apartment.find(params[:apartment_id])
+    @resident = @apartment.residents.find(params[:id])
   end
 
   def new
-    @resident = Resident.new
+    @apartment = Apartment.find(params[:apartment_id])
+    @resident = @apartment.residents.new
   end
 
   def create
-    @resident = Resident.new(resident_params)
-
-    if @resident.save
-      redirect_to resident_path @resident
-    else
-      render :new, status: :unprocessable_entity
-    end
+    @apartment = Apartment.find(params[:apartment_id])
+    @resident = @apartment.residents.create(resident_params)
+    redirect_to apartment_path @apartment
   end
 
   def edit
-    @resident = Resident.find(params[:id])
+    @apartment = Apartment.find(params[:apartment_id])
+    @resident = @apartment.residents.find(params[:id])
   end
 
   def update
-    @resident = Resident.find(params[:id])
+    @apartment = Apartment.find(params[:apartment_id])
+    @resident = @apartment.residents.find(params[:id])
 
-    if @resident.update(resident_params)
-      redirect_to resident_path @resident
+    if @resident.update(resident_params )
+      redirect_to apartment_path @apartment
     else
       render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @resident = Resident.find(params[:id])
+    @apartment = Apartment.find(params[:apartment_id])
+    @resident = @apartment.residents.find(params[:id])
     @resident.destroy
+    redirect_to apartment_path @apartment
 
-    redirect_to residents_path
   end
 
   private

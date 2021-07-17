@@ -9,8 +9,9 @@ Rails.application.routes.draw do
 
   resources :documents
 
-  resources :apartments
+  resources :apartments do
   resources :residents
+  end
 
   resources :articles do
     resources :comments
