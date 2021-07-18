@@ -1,2 +1,0 @@
-class Appartment < ApplicationRecord
-end

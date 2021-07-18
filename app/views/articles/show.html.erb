@@ -1,15 +1,15 @@
-<h2><%= @article.title %></h2>
+<h3><%= @article.title %></h3>
 
 <p><%= @article.body %></p>
 
 <ul>
-  <li><%= link_to "Редагувати", edit_article_path(@article) %></li>
+  <li><%= link_to "Змінити", edit_article_path(@article) %></li>
   <li><%= link_to "Видалити", article_path(@article),
                   method: :delete,
-                  data: { confirm: "Are you sure?" } %></li>
+                  data: { confirm: "Ви впевнені?" } %></li>
 </ul>
 
-<h3>Коментарі</h3>
+<h4>Коментарі</h4>
 <%= render @article.comments %>
 
 <h5>Додати коментар:</h5>

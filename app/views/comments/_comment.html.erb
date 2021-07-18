@@ -1,5 +1,5 @@
 <p>
-  <strong>:Коментатор</strong>
+  <strong>Коментатор:</strong>
   <%= comment.commenter %>
 </p>
 
@@ -9,7 +9,7 @@
 </p>
 
 <p>
-  <%= link_to 'Destroy Comment', [comment.article, comment],
+  <%= link_to 'Видалити коментар', [comment.article, comment],
               method: :delete,
-              data: { confirm: "Are you sure?" } %>
+              data: { confirm: "Ви впевнені?" } %>
 </p>
