@@ -5,12 +5,9 @@
 
     <%= @resident.apartment_number %> <%= @resident.lastname %> <%= @resident.name %> <%= @resident.surname %> <%= @resident.phone %> <%= @resident.birthday %> <%= @resident.owner %> <%= @resident.tenant %>
 
-    <%= link_to 'Редагувати ', edit_apartment_resident_path(@apartment)  %>
+    <%= link_to 'Змінити', edit_apartment_resident_path(@apartment)  %>
 
-    <%= link_to ' Видалити', apartment_resident_path(@apartment),
+    <li><%= link_to ' Видалити', apartment_resident_path(@apartment),
                 method: :delete,
-                data: { confirm: "Ви впевнені?" } %>
-
-  </ul>
-
+                data: { confirm: "Are you sure?" } %></li>
 
