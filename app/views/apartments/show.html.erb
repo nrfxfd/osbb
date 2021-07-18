@@ -14,7 +14,7 @@
 <h6>№ квартири  прізвище   ім'я   по батькові  телефон день народження власник квартири орендар квартири</h6>
 <%= render @apartment.residents %>
 
-<%= link_to 'Додати мешканця', new_apartment_resident_path(@apartment) %>
+<li>Додати мешканця до кв.№<%= link_to @apartment.apartment_number, new_apartment_resident_path(@apartment) %></li>
 
 
 
