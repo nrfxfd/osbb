@@ -3,7 +3,7 @@
 <h6> площа сплачено:вода сплачено:електроенергія показник:вода показник:електроенергія  баланс</h6>
 <%= @apartment.apartment_area %> <%= @apartment.water_is_paid %> <%= @apartment.electricity_is_paid %> <%= @apartment.current_meters_water %> <%= @apartment.current_meter_electricity %> <%= @apartment.arrears %> </p>
 <ul>
-  <li><%= link_to "Редагувати", edit_apartment_path(@apartment) %></li>
+  <li><%= link_to "Змінити", edit_apartment_path(@apartment) %></li>
   <li><%= link_to "Видалити", apartment_path(@apartment),
                   method: :delete,
                   data: { confirm: "Are you sure?" } %></li>
@@ -13,6 +13,8 @@
 
 <h6>№ квартири  прізвище   ім'я   по батькові  телефон день народження власник квартири орендар квартири</h6>
 <%= render @apartment.residents %>
+
+<%= link_to 'Додати мешканця', new_apartment_resident_path(@apartment) %>
 
 
 
