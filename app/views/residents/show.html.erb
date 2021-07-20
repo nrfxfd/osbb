@@ -1,9 +1,20 @@
 
 
 
-<caption>Мешканці квартири № <%= @apartment.apartment_number %></caption>
-<br>
-<table width="200" bgcolor="#c0c0c0" cellspacing="0" cellpadding="5" border="1">
+<caption>Мешканець квартири № <%= @apartment.apartment_number %></caption>
+<p></p>
+<table width="300" bgcolor="#c0c0c0" cellspacing="0" cellpadding="5" border="1">
+  <tr>
+      <th> №квартири </th>
+      <th> Прізвище  </th>
+      <th> Ім'я  </th>
+      <th> По-батькові  </th>
+      <th> Телефон  </th>
+      <th> День народження  </th>
+      <th> Власник   </th>
+      <th> Орендар   </th>
+  </tr>
+
   <tr>
     <td><%= @resident.apartment_number %></td>
     <td><%= @resident.lastname %></td>

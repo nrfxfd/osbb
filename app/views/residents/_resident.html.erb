@@ -7,11 +7,7 @@
     <td><%= resident.birthday %></td>
     <td><%= resident.owner %></td>
     <td><%= resident.tenant %></td>
-    <td><%= link_to 'Змінити', edit_apartment_resident_path(@apartment)%></td>
-    <td><%= link_to ' Видалити', apartment_resident_path(@apartment),
-                    method: :delete,
-                    data: { confirm: "Are you sure?" } %></td>
-
+    <td><%= link_to 'Змінити', [resident.apartment, resident] %></td>
 </tr>
 
 
