@@ -1,8 +1,8 @@
-<%= form_with model: [:apartment, @resident] do |form| %>
+<%= form_with model: [@apartment, @resident] do |form| %>
 
   <div>
     <%= form.label :'№ квартири'%><br>
-    <%= form.number_field :apartment_number, is: 1..99%>
+    <%= form.number_field :apartment_number, is: 1..99 %>
   </div>
 
   <div>
@@ -43,4 +43,5 @@
   <div>
     <%= form.submit ({:class => 'btn btn-success'})%>
   </div>
+
 <% end %>

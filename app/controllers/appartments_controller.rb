@@ -1,53 +1,55 @@
-class AppartmentsController < ApplicationController
-
+class ApartmentsController < ApplicationController
   def index
 
-    @appartments = 'appartment.all, CRUD'
+    @apartments = Apartment.all
 
   end
 
   def show
-    @appartments = appartment.find(params[:id])
+    @apartment = Apartment.find(params[:id])
   end
 
   def new
-    @appartments = appartment.new
+    @apartment = Apartment.new
   end
 
   def create
-    @appartments = appartment.new(article_params)
+    @apartment = Apartment.new(apartment_params)
 
-    if @appartment.save
-      redirect_to @appartment
+    if @apartment.save
+      redirect_to apartment_path @apartment
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def edit
-    @appartments = appartment.find(params[:id])
+    @apartment = Apartment.find(params[:id])
   end
 
   def update
-    @appartments = appartment.find(params[:id])
+    @apartment = Apartment.find(params[:id])
 
-    if @appartment.update(article_params)
-      redirect_to @appartment
+    if @apartment.update(apartment_params )
+      redirect_to apartment_path @apartment
     else
       render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @appartments = appartment.find(params[:id])
-    @appartment.destroy
+    @apartment = Apartment.find(params[:id])
+    @apartment.destroy
 
-    redirect_to @appartment_path
+    redirect_to apartments_path
   end
 
   private
-  def appartment_params
-    params.require(:article).permit(:title, :body, :status)
+
+  def apartment_params
+    params.require(:apartment).permit( :apartment_number, :apartment_area,
+                                       :water_is_paid,:electricity_is_paid,
+                                       :current_meters_water,:current_meter_electricity,:arrears)
   end
 
 end

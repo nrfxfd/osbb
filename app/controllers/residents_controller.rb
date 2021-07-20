@@ -25,7 +25,7 @@ class ResidentsController < ApplicationController
     @apartment = Apartment.find(params[:apartment_id])
     @resident = @apartment.residents.find(params[:id])
 
-    if @resident.update(resident_params )
+    if @resident.update(resident_params)
       redirect_to apartment_path @apartment
     else
       render :edit, status: :unprocessable_entity

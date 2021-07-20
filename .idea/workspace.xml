@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="11227a37-2198-4b37-8b22-dbb4752621d0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/development.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/osbb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/osbb.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/apartments/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/apartments/edit.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/apartments/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/apartments/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/apartments/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/apartments/show.html.erb" afterDir="false" />
+    <list default="true" id="11227a37-2198-4b37-8b22-dbb4752621d0" name="Default Changelist" comment="v">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/appartments_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/appartments_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/residents_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/residents_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/comments/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/comments/_form.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/residents/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/residents/_form.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/residents/_resident.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/residents/_resident.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/residents/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/residents/edit.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/residents/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/residents/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/development.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db/development.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +19,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="1vaklEsaMxPfDQm13LjJA5q99nW" />
   <component name="ProjectViewState">
@@ -148,11 +150,44 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1626807735329</updated>
-      <workItem from="1626807736602" duration="637000" />
+      <workItem from="1626807736602" duration="8387000" />
     </task>
+    <task id="LOCAL-00001" summary="v">
+      <created>1626808871032</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1626808871032</updated>
+    </task>
+    <task id="LOCAL-00002" summary="v">
+      <created>1626808886617</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1626808886617</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="v" />
+    <option name="LAST_COMMIT_MESSAGE" value="v" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/osbb@Development__osbb.rcov" NAME="Development: osbb Coverage Results" MODIFIED="1626813224581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="osbb" />
   </component>
 </project>
