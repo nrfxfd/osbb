@@ -1,18 +1,49 @@
-<h2>Квартира № <%= @apartment.apartment_number %></h2>
+<caption>Квартира № <%= @apartment.apartment_number %></caption>
 
-<h6> площа сплачено:вода сплачено:електроенергія показник:вода показник:електроенергія  баланс</h6>
-<%= @apartment.apartment_area %> <%= @apartment.water_is_paid %> <%= @apartment.electricity_is_paid %> <%= @apartment.current_meters_water %> <%= @apartment.current_meter_electricity %> <%= @apartment.arrears %> </p>
-<ul>
-  <li><%= link_to "Редагувати", edit_apartment_path(@apartment) %></li>
-  <li><%= link_to "Видалити", apartment_path(@apartment),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %></li>
-</ul>
+<table width="200" bgcolor="#c0c0c0" cellspacing="0" cellpadding="5" border="1"  >
+  <tr>
+    <th> площа  </th>
+    <th> сплачено:вода  </th>
+    <th> сплачено:електроенергія  </th>
+    <th> показник:вода  </th>
+    <th> показник:електроенергія  </th>
+    <th> баланс  </th>
+  </tr>
 
-<h3>Мешканці квартири № <%= @apartment.apartment_number %></h3>
+  <tr>
+    <td><%= @apartment.apartment_area %></td>
+    <td><%= @apartment.water_is_paid %></td>
+    <td><%= @apartment.electricity_is_paid %> </td>
+    <td><%= @apartment.current_meters_water %></td>
+    <td><%= @apartment.current_meter_electricity %> </td>
+    <td><%= @apartment.arrears %></td>
+    <td><%= link_to "Змінити", edit_apartment_path(@apartment) %></td>
+    <td><%= link_to "Видалити", apartment_path(@apartment),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } %></td>
+  </tr>
+</table>
+<p>
+</p>
+<caption>Мешканці квартири № <%= @apartment.apartment_number %></caption>
 
-<h6>№ квартири  прізвище   ім'я   по батькові  телефон день народження власник квартири орендар квартири</h6>
-<%= render @apartment.residents %>
+<table width="200" bgcolor="#c0c0c0" cellspacing="0" cellpadding="5" border="1">
+
+  <tr>
+    <th> №квартири </th>
+    <th> Прізвище  </th>
+    <th> Ім'я  </th>
+    <th> По-батькові  </th>
+    <th> Телефон  </th>
+    <th> День народження  </th>
+    <th> Власник   </th>
+    <th> Орендар   </th>
+  </tr>
+  <%= render @apartment.residents %>
+</table>
+
+<%= link_to "Додати мешканця", new_apartment_resident_path(@apartment) %>
+
 
 
 

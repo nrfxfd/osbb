@@ -1,13 +1,30 @@
-<h1>Квартири</h1>
+<caption>Квартири</caption>
+<table width="200" bgcolor="#c0c0c0" cellspacing="0" cellpadding="5" border="1" >
+  <tr>
+    <th> №  </th>
+    <th> площа  </th>
+    <th> сплачено:вода  </th>
+    <th> сплачено:електроенергія  </th>
+    <th> показник:вода  </th>
+    <th> показник:електроенергія  </th>
+    <th> баланс  </th>
+  </tr>
 
-<h6> № площа сплачено:вода сплачено:електроенергія показник:вода показник:електроенергія  баланс</h6>
-<ul>
-  <% @apartments .each do |apartment| %>
-    <li>
-      <%= link_to apartment.apartment_number, apartment %>  <%= apartment.id %> <%= apartment.apartment_area %> <%= apartment.water_is_paid %> <%= apartment.electricity_is_paid %> <%= apartment.current_meters_water%> <%= apartment.current_meter_electricity %> <%= apartment.arrears%>
-    </li>
-  <% end %>
-</ul>
+    <% @apartments .each do |apartment| %>
 
+  <tr>
+    <td><%= link_to apartment.apartment_number, apartment %></td>
+    <td><%= apartment.apartment_area %></td>
+    <td><%= apartment.water_is_paid %></td>
+    <td><%= apartment.electricity_is_paid %></td>
+    <td><%= apartment.current_meters_water%></td>
+    <td><%= apartment.current_meter_electricity%></td>
+      <td><%= apartment.arrears%></td>
+
+    <% end %>
+  </tr>
+
+</table>
 
 <%= link_to "Додати квартиру", new_apartment_path %>
+

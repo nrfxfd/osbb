@@ -1,13 +1,28 @@
 
 
 
-  <ul>
+<caption>Мешканці квартири № <%= @apartment.apartment_number %></caption>
+<br>
+<table width="200" bgcolor="#c0c0c0" cellspacing="0" cellpadding="5" border="1">
+  <tr>
+    <td><%= @resident.apartment_number %></td>
+    <td><%= @resident.lastname %></td>
+    <td><%= @resident.name %></td>
+    <td><%= @resident.surname %></td>
+    <td><%= @resident.phone %></td>
+    <td><%= @resident.birthday %></td>
+    <td><%= @resident.owner %></td>
+    <td><%= @resident.tenant %></td>
+    <td><%= link_to 'Змінити', edit_apartment_resident_path(@apartment, resident: @resident)%></td>
+    <td><%= link_to ' Видалити', apartment_resident_path(@apartment, resident: @resident),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } %></td>
+  </tr>
 
-    <%= @resident.apartment_number %> <%= @resident.lastname %> <%= @resident.name %> <%= @resident.surname %> <%= @resident.phone %> <%= @resident.birthday %> <%= @resident.owner %> <%= @resident.tenant %>
+</table>
 
-    <%= link_to 'Змінити', edit_apartment_resident_path(@apartment)  %>
 
-    <li><%= link_to ' Видалити', apartment_resident_path(@apartment),
-                method: :delete,
-                data: { confirm: "Are you sure?" } %></li>
+
+
+
 
