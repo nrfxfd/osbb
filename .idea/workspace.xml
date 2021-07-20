@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11227a37-2198-4b37-8b22-dbb4752621d0" name="Default Changelist" comment="v">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/appartments_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/appartments_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/residents_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/residents_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/comments/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/comments/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/residents/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/residents/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/residents/_resident.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/residents/_resident.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/residents/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/residents/edit.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/residents/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/residents/show.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/development.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db/development.sqlite3" afterDir="false" />
     </list>
@@ -150,7 +144,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1626807735329</updated>
-      <workItem from="1626807736602" duration="8387000" />
+      <workItem from="1626807736602" duration="8694000" />
     </task>
     <task id="LOCAL-00001" summary="v">
       <created>1626808871032</created>
@@ -166,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1626808886617</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="v">
+      <created>1626816629355</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1626816629355</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
