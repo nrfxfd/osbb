@@ -1,11 +1,16 @@
-
-
-
-<caption>Мешканець квартири № <%= @apartment.apartment_number %></caption>
 <p></p>
-<table width="300" bgcolor="#c0c0c0" cellspacing="0" cellpadding="5" border="1">
-  <tr>
-      <th> №квартири </th>
+<p></p>
+<p></p>
+<p></p>
+<h4><%= @resident.lastname%> <%=@resident.name[0]%>. <%=@resident.surname[0]%></h4>
+<br>
+<br>
+<br>
+<br>
+
+<table width="200" bgcolor="#c0c0c0" cellspacing="0" cellpadding="5" border="2" >
+  <tr :hover  background= " #d5e6a2" >
+      <th > №квартири </th>
       <th> Прізвище  </th>
       <th> Ім'я  </th>
       <th> По-батькові  </th>

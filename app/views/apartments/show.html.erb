@@ -1,7 +1,9 @@
+<br>
+<br>
 <caption>Квартира № <%= @apartment.apartment_number %></caption>
-
-<table width="200" bgcolor="#c0c0c0" cellspacing="0" cellpadding="5" border="1"  >
-  <tr>
+<br>
+<table width="200"  cellspacing="0" cellpadding="5" border="1"  >
+  <tr bgcolor="#c0c0c0" >
     <th> площа  </th>
     <th> сплачено:вода  </th>
     <th> сплачено:електроенергія  </th>
@@ -23,13 +25,17 @@
                     data: { confirm: "Are you sure?" } %></td>
   </tr>
 </table>
-<p>
-</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <caption>Мешканці квартири № <%= @apartment.apartment_number %></caption>
 
-<table width="300" bgcolor="#c0c0c0" cellspacing="0" cellpadding="5" border="1">
+<table width="300"  cellspacing="0" cellpadding="5" border="1">
 
-  <tr>
+  <tr bgcolor="#c0c0c0">
     <th> №квартири </th>
     <th> Прізвище  </th>
     <th> Ім'я  </th>
@@ -41,6 +47,7 @@
   </tr>
   <%= render @apartment.residents %>
 </table>
+<br>
 
 <%= link_to "Додати мешканця", new_apartment_resident_path(@apartment) %>
 

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="899b4329-5e92-48f3-8c0b-f99bf79251a6" name="Default Changelist" comment="">
+    <list default="true" id="899b4329-5e92-48f3-8c0b-f99bf79251a6" name="Default Changelist" comment="v">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/apartments/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/apartments/index.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/apartments/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/apartments/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/residents/_resident.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/residents/_resident.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/residents/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/residents/edit.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/residents/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/residents/show.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -170,6 +171,7 @@
       <workItem from="1625958846349" duration="21536000" />
       <workItem from="1626115092283" duration="135655000" />
       <workItem from="1626780598531" duration="8751000" />
+      <workItem from="1626797503594" duration="859000" />
     </task>
     <task id="LOCAL-00001" summary="Ver 0.1">
       <created>1625545304762</created>
@@ -395,7 +397,14 @@
       <option name="project" value="LOCAL" />
       <updated>1626790059227</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="v">
+      <created>1626792280372</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1626792280372</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -476,7 +485,8 @@
     <MESSAGE value="Fix blog" />
     <MESSAGE value="Merge branch 'develop'" />
     <MESSAGE value="Merge remote-tracking branch 'origin/develop' into develop" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/develop' into develop" />
+    <MESSAGE value="v" />
+    <option name="LAST_COMMIT_MESSAGE" value="v" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/osbb@20210712200313_create_appartments.rcov" NAME="20210712200313_create_appartments Coverage Results" MODIFIED="1626195062344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db/migrate" MODULE_NAME="osbb" />
