@@ -42,12 +42,6 @@ ActiveRecord::Schema.define(version: 2021_07_14_171959) do
     t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
-  create_table "docs", force: :cascade do |t|
-    t.string "title"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "residents", force: :cascade do |t|
     t.integer "apartment_number"
     t.text "lastname"
