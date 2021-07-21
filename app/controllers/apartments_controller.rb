@@ -48,8 +48,8 @@ class ApartmentsController < ApplicationController
 
   def apartment_params
     params.require(:apartment).permit( :apartment_number, :apartment_area,
-                                       :water_is_paid,:electricity_is_paid,
-                                       :current_meters_water,:current_meter_electricity,:arrears)
+                                       :heating_counter,
+                                       :water_counter,:electricity_counter,:arrears)
   end
 
 end

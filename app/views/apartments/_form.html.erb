@@ -11,23 +11,18 @@
   </div>
 
   <div>
-    <%= form.label :'Сплачено: вода' %><br>
-    <%= form.number_field :water_is_paid, in: 1.0..99999.0%><br>
+    <%= form.label :'Опалення' %><br>
+    <%= form.number_field :heating_counter, in: 1.0..99999.0%><br>
   </div>
 
   <div>
-    <%= form.label :'Сплачено: електроенергія' %><br>
-    <%= form.number_field :electricity_is_paid, in: 1.0..99999.0%><br>
+    <%= form.label :'Показник лічильніка: вода' %><br>
+    <%= form.number_field :water_counter, in: 1.0..99999.0%><br>
   </div>
 
   <div>
-    <%= form.label :'Показник лічильніка води' %><br>
-    <%= form.number_field :current_meters_water, in: 1.0..99999.0%><br>
-  </div>
-
-  <div>
-    <%= form.label :'Показник лічильніка електроенергії' %><br>
-    <%= form.number_field :current_meter_electricity, in: 1.0..99999.0%><br>
+    <%= form.label :'Показник лічильніка: електроенергія' %><br>
+    <%= form.number_field :electricity_counter, in: 1.0..99999.0%><br>
   </div>
 
   <div>

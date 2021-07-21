@@ -5,8 +5,7 @@
 <table width="200"  cellspacing="0" cellpadding="5" border="1"  >
   <tr bgcolor="#c0c0c0" >
     <th> площа  </th>
-    <th> сплачено:вода  </th>
-    <th> сплачено:електроенергія  </th>
+    <th> опалення  </th>
     <th> показник:вода  </th>
     <th> показник:електроенергія  </th>
     <th> баланс  </th>
@@ -14,15 +13,14 @@
 
   <tr>
     <td><%= @apartment.apartment_area %></td>
-    <td><%= @apartment.water_is_paid %></td>
-    <td><%= @apartment.electricity_is_paid %> </td>
-    <td><%= @apartment.current_meters_water %></td>
-    <td><%= @apartment.current_meter_electricity %> </td>
+    <td><%= @apartment.heating_counter %> </td>
+    <td><%= @apartment.water_counter %></td>
+    <td><%= @apartment.electricity_counter %> </td>
     <td><%= @apartment.arrears %></td>
     <td><%= link_to "Змінити", edit_apartment_path(@apartment) %></td>
     <td><%= link_to "Видалити", apartment_path(@apartment),
                     method: :delete,
-                    data: { confirm: "Are you sure?" } %></td>
+                    data: { confirm: "Ви впевнені?" } %></td>
   </tr>
 </table>
 <br>
