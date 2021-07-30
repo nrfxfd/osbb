@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.3'
+ruby '3.0.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4'
@@ -32,6 +32,8 @@ group :development, :test do
 end
 
 group :development do
+  # Use postgress as the database for Active Record
+  gem 'pg',             '~> 1.2.3'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.4'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
@@ -58,6 +60,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap', '~> 5.0.1'
 
 group :production do
- gem 'pg'
+
  gem 'rails_12factor'
 end
