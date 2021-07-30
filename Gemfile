@@ -32,6 +32,8 @@ group :development, :test do
 end
 
 group :development do
+  # Use postgress as the database for Active Record
+  gem 'pg',             '~> 1.2.3'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.4'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
@@ -55,7 +57,9 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+gem 'bootstrap', '~> 5.0.1'
+
 group :production do
-  gem 'pg',             '0.17.1'
-  gem 'rails_12factor', '0.0.2'
+
+ gem 'rails_12factor'
 end

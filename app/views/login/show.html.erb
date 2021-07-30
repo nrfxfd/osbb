@@ -18,9 +18,7 @@
     <td><%= @apartment.electricity_counter %> </td>
     <td><%= @apartment.arrears %></td>
     <td><%= link_to "Змінити", edit_apartment_path(@apartment) %></td>
-    <td><%= link_to "Видалити", apartment_path(@apartment),
-                    method: :delete,
-                    data: { confirm: "Ви впевнені?" } %></td>
+
   </tr>
 </table>
 <br>
@@ -47,7 +45,6 @@
 </table>
 <br>
 
-<%= link_to "Додати мешканця", new_apartment_resident_path(@apartment) %>
 
 
 

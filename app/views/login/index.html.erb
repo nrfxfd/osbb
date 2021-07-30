@@ -1,33 +1,22 @@
 <h1><%= @login %></h1>
+<br>
+<br>
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Osbb</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
-  <%= stylesheet_link_tag 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css'%>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-</head>
-
-<body>
-<div class="d-flex" id="wrapper">
+<caption>Квартири</caption>
+<table width="200"  cellspacing="0" cellpadding="5" border="1" >
+  <tr bgcolor="#c0c0c0">
+    <th> №  </th>
 
 
-            <li class="nav-item active"><span class="nav-link"> <%= link_to  " Квартира  ", apartments_path %></span> </li>
+  <% @apartments .each do |apartment| %>
+
+    <tr>
+      <td><%= link_to apartment.apartment_number, apartment%></td>
 
 
-    <!-- Page content-->
-    <div class="container">
-      <p><%= yield %></p>
+  <% end %>
+  </tr>
 
-      <p>
+</table>
 
-    </div>
-  </div>
-</div>
 
-</body>
-</html>

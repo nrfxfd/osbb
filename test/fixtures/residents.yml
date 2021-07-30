@@ -24,7 +24,7 @@ two:
   name: MyText
   surname: MyText
   phone: MyText
-  birthday: 2021-07-14
+  birthday: 2021-07-28
   owner: false
   tenant: false
   apartment: one
@@ -35,7 +35,7 @@ two:
   name: MyText
   surname: MyText
   phone: MyText
-  birthday: 2021-07-14
+  birthday: 2021-07-28
   owner: false
   tenant: false
   apartment: two
