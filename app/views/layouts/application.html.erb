@@ -6,7 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <link href="assets/styles.css" rel="stylesheet" />
+    <link href="assets/application.css" rel="stylesheet" />
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>"
   </head>
@@ -19,7 +19,7 @@
       <div class="list-group list-group-flush">
         <span class="list-group-item list-group-item-action list-group-item-light p-3"> <%= link_to "Головна", home_path %></span>
         <span class="list-group-item list-group-item-action list-group-item-light p-3"> <%= link_to "Про нас", documents_path %></span>
-        <span class="list-group-item list-group-item-action list-group-item-light p-3"> <%= link_to "Форум", articles_path %></span>
+        <span class="list-group-item list-group-item-action list-group-item-light p-3"> <%= link_to 'Дошка оголошень', articles_path %></span>
         <span class="list-group-item list-group-item-action list-group-item-light p-3"> <%= link_to "Відеонагляд", video_path %></span>
 
         <!--        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Profile</a>
