@@ -12,12 +12,6 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-//= require jquery
-//= require jquery_ujs
-//= require bootstrap
-//= require turbolinks
-//= require_tree .
-
 window.addEventListener('DOMContentLoaded', event => {
 
     // Toggle the side navigation
