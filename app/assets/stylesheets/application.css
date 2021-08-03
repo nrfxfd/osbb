@@ -27,6 +27,11 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+//= require jquery
+//= require jquery_ujs
+//= require bootstrap
+//= require turbolinks
+//= require_tree .
 
 :root {
     --bs-blue: #0d6efd;
