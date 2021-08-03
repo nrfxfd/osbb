@@ -1,0 +1,24 @@
+<% provide(:title, "Log in") %>
+<h2>Вхід</h2>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(:session, url: login_path) do |f| %>
+
+      <%= f.label :apartment_number %>
+      <%= f.number_field :apartment_number, class: 'form-control', in: 1..99 %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.label :remember_me, class: "checkbox inline" do %>
+        <%= f.check_box :remember_me %>
+        <span>Remember me on this computer</span>
+      <% end %>
+
+      <%= f.submit "Увійти", class: "btn btn-primary" %>
+    <% end %>
+
+    <p>New user? <%= link_to "Вперше тут!", documents_path %></p>
+  </div>
+</div>
