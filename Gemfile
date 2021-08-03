@@ -61,6 +61,9 @@ gem 'bootstrap', '~> 5.0.1'
 gem 'bootstrap-sass'
 gem 'bcrypt'
 
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+
 group :production do
 
  gem 'rails_12factor'

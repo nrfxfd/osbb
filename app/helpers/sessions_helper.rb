@@ -12,6 +12,7 @@ module SessionsHelper
     cookies.permanent[:remember_token] = apartment.remember_token
   end
 
+
   #Returns the user corresponding to the remember token in the cookie
   def current_apartment
     if (apartment_id = session[:apartment_id])
