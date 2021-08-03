@@ -10,39 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_28_163449) do
+ActiveRecord::Schema.define(version: 2021_08_03_124208) do
 
-  create_table "apartments", force: :cascade do |t|
-    t.integer "apartment_number"
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "apartments", id: :bigint, default: nil, force: :cascade do |t|
+    t.bigint "apartment_number"
     t.decimal "apartment_area"
     t.decimal "heating_counter"
     t.decimal "water_counter"
     t.decimal "electricity_counter"
     t.decimal "arrears"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.text "created_at", null: false
+    t.text "updated_at", null: false
+    t.string "password_digest"
+    t.boolean "admin"
+    t.string "remember_digest"
   end
 
-  create_table "articles", force: :cascade do |t|
-    t.string "title"
+  create_table "articles", id: :bigint, default: nil, force: :cascade do |t|
+    t.text "title"
     t.text "body"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "status"
+    t.text "created_at", null: false
+    t.text "updated_at", null: false
+    t.text "status"
   end
 
-  create_table "comments", force: :cascade do |t|
-    t.string "commenter"
+  create_table "comments", id: :bigint, default: nil, force: :cascade do |t|
+    t.text "commenter"
     t.text "body"
-    t.integer "article_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "status"
+    t.bigint "article_id", null: false
+    t.text "created_at", null: false
+    t.text "updated_at", null: false
+    t.text "status"
     t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
-  create_table "residents", force: :cascade do |t|
-    t.integer "apartment_number"
+  create_table "residents", id: :bigint, default: nil, force: :cascade do |t|
+    t.bigint "apartment_number"
     t.text "lastname"
     t.text "name"
     t.text "surname"
@@ -50,12 +56,12 @@ ActiveRecord::Schema.define(version: 2021_07_28_163449) do
     t.date "birthday"
     t.boolean "owner"
     t.boolean "tenant"
-    t.integer "apartment_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "apartment_id", null: false
+    t.text "created_at", null: false
+    t.text "updated_at", null: false
     t.index ["apartment_id"], name: "index_residents_on_apartment_id"
   end
 
-  add_foreign_key "comments", "articles"
-  add_foreign_key "residents", "apartments"
+  add_foreign_key "comments", "articles", name: "comments_article_id_fkey"
+  add_foreign_key "residents", "apartments", name: "residents_apartment_id_fkey"
 end
