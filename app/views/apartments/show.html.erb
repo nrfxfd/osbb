@@ -2,27 +2,31 @@
 <br>
 <caption>Квартира № <%= @apartment.apartment_number %></caption>
 <br>
+
 <table width="200"  cellspacing="0" cellpadding="5" border="1"  >
   <tr bgcolor="#c0c0c0" >
-    <th> площа  </th>
-    <th> опалення  </th>
-    <th> показник:вода  </th>
-    <th> показник:електроенергія  </th>
-    <th> баланс  </th>
+    <th> площа, м кв. </th>
+    <th> опалення, кКал</th>
+    <th> вода, м куб. </th>
+    <th> електроенергія, кВт/год  </th>
+    <th> баланс, грн  </th>
     <th></th>
     <th></th>
   </tr>
-
   <tr>
     <td><%= @apartment.apartment_area %></td>
     <td><%= @apartment.heating_counter %> </td>
     <td><%= @apartment.water_counter %></td>
     <td><%= @apartment.electricity_counter %> </td>
     <td><%= @apartment.arrears %></td>
-    <td><%= link_to "Змінити", edit_apartment_path(@apartment) %></td>
-    <td><%= link_to "Видалити", apartment_path(@apartment),
+    <td><%#= link_to "Змінити", edit_apartment_path(@apartment) %></td>
+
+<!-- To forbid delete self-->
+    <% if current_apartment != @apartment  %>
+      <td><%= link_to "Видалити", apartment_path(@apartment),
                     method: :delete,
                     data: { confirm: "Ви впевнені?" } %></td>
+    <% end %>
   </tr>
 </table>
 <br>
@@ -51,7 +55,10 @@
 </table>
 <br>
 
-<%= link_to "Додати мешканця", new_apartment_resident_path(@apartment) %>
+
+<% if current_apartment.admin?  %>
+    <%= link_to "Додати мешканця", new_apartment_resident_path(@apartment) %>
+<% end %>
 
 
 

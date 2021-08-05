@@ -3,8 +3,8 @@ class Apartment < ApplicationRecord
   attr_accessor :remember_token
   has_many :residents, dependent: :destroy
   accepts_nested_attributes_for :residents
-
   validates :apartment_number, presence: true, uniqueness: true
+  before_update :nonedit_fields
 
   has_secure_password
   #VALID_USER_REGEX = /\A[a-z]+\z/i
@@ -40,5 +40,12 @@ class Apartment < ApplicationRecord
   def forget
     update_attribute(:remember_digest, nil)
   end
+
+  #Check nonedit fields
+  def nonedit_fields
+    self.apartment_number = self.apartment_number_was
+    self.apartment_area = self.apartment_area_was
+  end
+
 end
 

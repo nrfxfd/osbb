@@ -1,33 +1,32 @@
 <%= form_with model: apartment do |form| %>
 
-
   <div>
     <%= form.label :'№ квартири'%><br>
-    <%= form.number_field :apartment_number, in: 1..77%>
+    <%= form.number_field :apartment_number, in: 1..999, readonly: mode == 'edit'%><br>
   </div>
 
   <div>
-    <%= form.label :'Площа квартири' %><br>
-    <%= form.number_field :apartment_area, in:25.0..150.0%><br>
+    <%= form.label :'Площа квартири, м кв.' %><br>
+    <%= form.number_field :apartment_area, in:25.0..150.0, readonly: mode == 'edit'%><br>
   </div>
 
   <div>
-    <%= form.label :'Опалення' %><br>
+    <%= form.label :'Опалення, кКал' %><br>
     <%= form.number_field :heating_counter, in: 1.0..99999.0%><br>
   </div>
 
   <div>
-    <%= form.label :'Показник лічильніка: вода' %><br>
+    <%= form.label :'Вода, м куб. ' %><br>
     <%= form.number_field :water_counter, in: 1.0..99999.0%><br>
   </div>
 
   <div>
-    <%= form.label :'Показник лічильніка: електроенергія' %><br>
+    <%= form.label :'Електроенергія, кВт/год ' %><br>
     <%= form.number_field :electricity_counter, in: 1.0..99999.0%><br>
   </div>
 
   <div>
-    <%= form.label :'Баланс' %><br>
+    <%= form.label :'Баланс, грн ' %><br>
     <%= form.number_field :arrears, in: 1.0..9999.0%><br>
   </div>
 

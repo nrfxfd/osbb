@@ -37,12 +37,11 @@
             <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
 
               <% if logged_in? %>
-                <% if current_apartment.admin?  %>
+                 <% if current_apartment.admin?  %>
                   <li class="nav-item active">
                     <span class="nav-link"><%= link_to  " Адміністратор ", apartments_path %></span>
                   </li>
-                <% end %>
-
+                 <% end %>
 
                 <li class="nav-item active"><span class="nav-link"> <%= link_to "Моя квартира", current_apartment %></span></li>
                 <li class="nav-item dropdown">
