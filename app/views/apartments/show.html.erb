@@ -6,6 +6,7 @@
 <table width="200"  cellspacing="0" cellpadding="5" border="1"  >
   <tr bgcolor="#c0c0c0" >
     <th> площа, м кв. </th>
+    <th> кількість мешканців </th>
     <th> опалення, кКал</th>
     <th> вода, м куб. </th>
     <th> електроенергія, кВт/год  </th>
@@ -15,6 +16,8 @@
   </tr>
   <tr>
     <td><%= @apartment.apartment_area %></td>
+    <!--Count only owner family without tenant(necessary to pay for garbage removal)-->
+    <td><%= @apartment.residents.where(:tenant => false ).count %></td>
     <td><%= @apartment.heating_counter %> </td>
     <td><%= @apartment.water_counter %></td>
     <td><%= @apartment.electricity_counter %> </td>

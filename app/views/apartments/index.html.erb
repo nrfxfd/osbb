@@ -6,6 +6,7 @@
   <tr bgcolor="#c0c0c0">
     <th> №  </th>
     <th> площа, м кв. </th>
+    <th> кількість мешканців </th>
     <th> опалення, кКал</th>
     <th> вода, м куб. </th>
     <th> електроенергія, кВт/год  </th>
@@ -17,6 +18,8 @@
   <tr>
     <td><%= link_to apartment.apartment_number, apartment %></td>
     <td><%= apartment.apartment_area %></td>
+    <!--Count without tenant-->
+    <td><%= apartment.residents.where(:tenant => false ).count %></td>
     <td><%= apartment.heating_counter %></td>
     <td><%= apartment.water_counter%></td>
     <td><%= apartment.electricity_counter%></td>
