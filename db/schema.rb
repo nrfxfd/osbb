@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_03_124208) do
+ActiveRecord::Schema.define(version: 2021_08_07_073119) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,14 @@ ActiveRecord::Schema.define(version: 2021_08_03_124208) do
     t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
+  create_table "electricity_counters", force: :cascade do |t|
+    t.decimal "value"
+    t.bigint "apartment_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["apartment_id"], name: "index_electricity_counters_on_apartment_id"
+  end
+
   create_table "residents", id: :bigint, default: nil, force: :cascade do |t|
     t.bigint "apartment_number"
     t.text "lastname"
@@ -62,6 +70,16 @@ ActiveRecord::Schema.define(version: 2021_08_03_124208) do
     t.index ["apartment_id"], name: "index_residents_on_apartment_id"
   end
 
+  create_table "water_counters", force: :cascade do |t|
+    t.decimal "value"
+    t.bigint "apartment_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["apartment_id"], name: "index_water_counters_on_apartment_id"
+  end
+
   add_foreign_key "comments", "articles", name: "comments_article_id_fkey"
+  add_foreign_key "electricity_counters", "apartments"
   add_foreign_key "residents", "apartments", name: "residents_apartment_id_fkey"
+  add_foreign_key "water_counters", "apartments"
 end

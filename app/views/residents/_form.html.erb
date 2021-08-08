@@ -3,17 +3,17 @@
 
   <div>
     <%= form.label :'Прізвище' %><br>
-    <%= form.text_field(:lastname,{:class => 'form-control'})%><br>
+    <%= form.text_field(:lastname,{:class => 'form-control',readonly:  !current_apartment.admin?})%><br>
   </div>
 
   <div>
     <%= form.label :"Ім'я" %><br>
-    <%= form.text_field(:name,{:class => 'form-control'})%><br>
+    <%= form.text_field(:name,{:class => 'form-control',readonly:  !current_apartment.admin?})%><br>
   </div>
 
   <div>
     <%= form.label :'По батькові' %><br>
-    <%= form.text_field(:surname,{:class => 'form-control'})%><br>
+    <%= form.text_field(:surname,{:class => 'form-control',readonly:  !current_apartment.admin?})%><br>
   </div>
 
   <div>
@@ -23,17 +23,17 @@
 
   <div>
     <%= form.label :'День народження' %><br>
-    <%= form.date_field(:birthday,{:class => 'form-control'})%><br>
+    <%= form.date_field(:birthday,{:class => 'form-control',readonly:  !current_apartment.admin?})%><br>
   </div>
 
   <div>
     <%= form.label :'Чи є власником квартири?' %><br>
-    <%= form.check_box( :owner) %><br>
+    <%= form.check_box( :owner,disabled: !current_apartment.admin? ) %><br>
   </div>
 
   <div>
     <%= form.label :'Чи є орендарем квартири?' %><br>
-    <%= form.check_box(:tenant)%><br>
+    <%= form.check_box(:tenant,disabled:  !current_apartment.admin?)%><br>
   </div>
 
   <div>

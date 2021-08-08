@@ -12,12 +12,12 @@
 
       <%= f.label :remember_me, class: "checkbox inline" do %>
         <%= f.check_box :remember_me %>
-        <span>Remember me on this computer</span>
+        <span>Запам'ятати мене</span>
       <% end %>
 
       <%= f.submit "Увійти", class: "btn btn-primary" %>
     <% end %>
 
-    <p>New user? <%= link_to "Вперше тут!", documents_path %></p>
+    <p><%= link_to "Вперше тут!", documents_path %></p>
   </div>
 </div>

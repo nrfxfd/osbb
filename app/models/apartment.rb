@@ -2,6 +2,8 @@ class Apartment < ApplicationRecord
 
   attr_accessor :remember_token
   has_many :residents, dependent: :destroy
+  has_many :electricity_counters, dependent: :destroy
+  has_many :water_counters, dependent: :destroy
   accepts_nested_attributes_for :residents
   validates :apartment_number, presence: true, uniqueness: true
   before_update :nonedit_fields

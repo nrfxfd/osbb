@@ -1,5 +1,7 @@
 class ResidentsController < ApplicationController
 
+  before_action :admin_apartment, only: [:index, :create, :new, :destroy]
+
   def show
     @apartment = Apartment.find(params[:apartment_id])
     @resident = @apartment.residents.find(params[:id])
@@ -33,11 +35,16 @@ class ResidentsController < ApplicationController
   end
 
   def destroy
+
     @apartment = Apartment.find(params[:apartment_id])
     @resident = @apartment.residents.find(params[:id])
     @resident.destroy
     redirect_to apartment_path @apartment
 
+  end
+
+  def admin_apartment
+    redirect_to(login_url) unless current_apartment.admin?
   end
 
   private
