@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   resources :apartments do
   resources :residents
+  resources :electricity_counters
+  resources :water_counters
   end
 
   resources :articles do

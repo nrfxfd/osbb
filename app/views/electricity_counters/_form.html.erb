@@ -1,0 +1,13 @@
+<%= form_with model: [@apartment, @electricity_counter] do |form| %>
+
+  <div>
+    <%= form.label :'Показник лічильника' %><br>
+    <%= form.number_field(:value,{:class => 'form-control'})%><br>
+  </div>
+
+
+  <div>
+    <%= form.submit ({:class => 'btn btn-success'})%>
+  </div>
+
+<% end %>

@@ -32,9 +32,11 @@
     <td><%= @resident.owner %></td>
     <td><%= @resident.tenant %></td>
     <td><%= link_to 'Змінити', edit_apartment_resident_path(@apartment, resident: @resident)%></td>
+    <% if current_apartment.admin?  %>
     <td><%= link_to ' Видалити', apartment_resident_path(@apartment, resident: @resident),
                     method: :delete,
-                    data: { confirm: "Are you sure?" } %></td>
+                    data: { confirm: "Ви впевнені?" } %></td>
+    <% end %>
   </tr>
 
 </table>

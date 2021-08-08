@@ -7,9 +7,6 @@
   <tr bgcolor="#c0c0c0" >
     <th> площа, м кв. </th>
     <th> кількість мешканців </th>
-    <th> опалення, кКал</th>
-    <th> вода, м куб. </th>
-    <th> електроенергія, кВт/год  </th>
     <th> баланс, грн  </th>
     <th></th>
     <th></th>
@@ -18,11 +15,8 @@
     <td><%= @apartment.apartment_area %></td>
     <!--Count only owner family without tenant(necessary to pay for garbage removal)-->
     <td><%= @apartment.residents.where(:tenant => false ).count %></td>
-    <td><%= @apartment.heating_counter %> </td>
-    <td><%= @apartment.water_counter %></td>
-    <td><%= @apartment.electricity_counter %> </td>
     <td><%= @apartment.arrears %></td>
-    <td><%#= link_to "Змінити", edit_apartment_path(@apartment) %></td>
+    <td><%= link_to "Змінити пароль", edit_apartment_path(@apartment) %></td>
 
 <!-- To forbid delete self-->
     <% if current_apartment != @apartment  %>
@@ -33,6 +27,31 @@
   </tr>
 </table>
 <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<caption>Показники лічильників кв. № <%= @apartment.apartment_number %></caption>
+
+<table width="400"  cellspacing="0" cellpadding="5" border="1">
+
+  <tr >
+    <th bgcolor="#c0c0c0"> <%=link_to_if(current_apartment.admin?, "Електроенергія", new_apartment_electricity_counter_path(@apartment),
+                                                           data: { confirm: "Додати лічильник електроенергії?" })%> </th>
+    <td><%= render @apartment.electricity_counters %></td>
+
+  </tr>
+  <tr>
+    <th  bgcolor="#c0c0c0"> <%=link_to_if(current_apartment.admin?,"Вода  ", new_apartment_water_counter_path(@apartment),
+                                                 data: { confirm: "Додати лічильник води?" }) %> </th>
+    <td><%= render @apartment.water_counters %></td>
+    <td></td>
+  </tr>
+
+
+
+</table>
 <br>
 <br>
 <br>
@@ -62,6 +81,9 @@
 <% if current_apartment.admin?  %>
     <%= link_to "Додати мешканця", new_apartment_resident_path(@apartment) %>
 <% end %>
+<br>
+<br>
+
 
 
 

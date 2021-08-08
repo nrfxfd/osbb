@@ -1,0 +1,33 @@
+<h4> Квартира № <%= @apartment.apartment_number %></h4>
+<br>
+<h5>Лічильник електроенергії.</h5>
+<br>
+<br>
+<br>
+
+<table width="200"  cellspacing="2" cellpadding="4" border="2" >
+  <tr bgcolor="#c0c0c0" >
+
+      <th> Показник  </th>
+      <th></th>
+      <th></th>
+  </tr>
+
+  <tr>
+
+    <td><%= link_to @electricity_counter.value, edit_apartment_electricity_counter_path(@apartment, electricity_counter: @electricity_counter)%></td>
+
+    <% if current_apartment.admin?  %>
+    <td><%= link_to ' Видалити', apartment_electricity_counter_path(@apartment, electricity_counter: @electricity_counter),
+                    method: :delete,
+                    data: { confirm: "Ви впевнені?" } %></td>
+    <% end %>
+  </tr>
+
+</table>
+
+
+
+
+
+

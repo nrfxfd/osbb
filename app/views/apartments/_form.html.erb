@@ -1,34 +1,18 @@
 <%= form_with model: apartment do |form| %>
 
+  <% if current_apartment.admin?  %>
+
   <div>
-    <%= form.label :'№ квартири'%><br>
-    <%= form.number_field :apartment_number, in: 1..999, readonly: mode == 'edit'%><br>
+    <%= form.label :'№ квартири', hidden: mode == 'edit'%><br>
+    <%= form.number_field :apartment_number, in: 1..999, hidden: mode == 'edit'%><br>
   </div>
 
   <div>
-    <%= form.label :'Площа квартири, м кв.' %><br>
-    <%= form.number_field :apartment_area, in:25.0..150.0, readonly: mode == 'edit'%><br>
+    <%= form.label :'Площа квартири, м кв.', hidden: mode == 'edit' %><br>
+    <%= form.number_field :apartment_area, in:25.0..150.0, hidden: mode == 'edit'%><br>
   </div>
 
-  <div>
-    <%= form.label :'Опалення, кКал' %><br>
-    <%= form.number_field :heating_counter, in: 1.0..99999.0%><br>
-  </div>
-
-  <div>
-    <%= form.label :'Вода, м куб. ' %><br>
-    <%= form.number_field :water_counter, in: 1.0..99999.0%><br>
-  </div>
-
-  <div>
-    <%= form.label :'Електроенергія, кВт/год ' %><br>
-    <%= form.number_field :electricity_counter, in: 1.0..99999.0%><br>
-  </div>
-
-  <div>
-    <%= form.label :'Баланс, грн ' %><br>
-    <%= form.number_field :arrears, in: 1.0..9999.0%><br>
-  </div>
+    <% end %>
 
   <div>
     <%= form.label :'Новий пароль' %><br>
