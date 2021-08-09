@@ -7,7 +7,7 @@ class ApartmentsController < ApplicationController
 
   def index
 
-    @apartments = Apartment.all
+    @apartments = Apartment.all.reorder('id ASC')
 
   end
 
@@ -70,6 +70,7 @@ class ApartmentsController < ApplicationController
                                        :electricity_counter,:arrears, :password,
                                        :password_confirmation)
   end
+
 
   #Prefilters
 

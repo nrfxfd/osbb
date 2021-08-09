@@ -11,17 +11,21 @@
       <th> Показник  </th>
       <th></th>
       <th></th>
+      <th></th>
   </tr>
+  <%= form_with model: [@apartment, @electricity_counter] do |form| %>
+    <tr>
+      <td><div ><%= form.number_field(:value,{:size => 7,method: :patch})%></td></div>
+      <td> <%= form.submit  ({:class => 'btn btn-success', :value => 'Зберегти'})%></td>
 
-  <tr>
+<% end %>
 
-    <td><%= link_to @electricity_counter.value, edit_apartment_electricity_counter_path(@apartment, electricity_counter: @electricity_counter)%></td>
-
-    <% if current_apartment.admin?  %>
-    <td><%= link_to ' Видалити', apartment_electricity_counter_path(@apartment, electricity_counter: @electricity_counter),
+  <% if current_apartment.admin?  %>
+    <td><%= link_to  'Змінити',edit_apartment_electricity_counter_path(@apartment, water_counter: @electricity_counter)%></td>
+    <td><%= link_to ' Видалити', apartment_electricity_counter_path(@apartment, water_counter: @electricity_counter),
                     method: :delete,
                     data: { confirm: "Ви впевнені?" } %></td>
-    <% end %>
+  <% end %>
   </tr>
 
 </table>

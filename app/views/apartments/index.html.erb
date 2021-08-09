@@ -5,18 +5,19 @@
 <table width="200"  cellspacing="0" cellpadding="5" border="1" >
   <tr bgcolor="#c0c0c0">
     <th> №  </th>
+    <th> Власник</th>
     <th> площа, м кв. </th>
     <th> кількість мешканців </th>
-    <th> опалення, кКал</th>
-    <th> вода, м куб. </th>
     <th> електроенергія, кВт/год  </th>
+    <th> вода, м куб. </th>
     <th> баланс, грн  </th>
   </tr>
 
-    <% @apartments .each do |apartment| %>
+    <% @apartments  .each do |apartment| %>
 
   <tr>
     <td><%= link_to apartment.apartment_number, apartment %></td>
+    <td><%=  apartment.residents.first%>.</td>
     <td><%= apartment.apartment_area %></td>
     <!--Count without tenant-->
     <td><%= apartment.residents.where(:tenant => false ).count %></td>

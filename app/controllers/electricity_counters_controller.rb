@@ -32,7 +32,9 @@ class ElectricityCountersController < ApplicationController
 
     if @electricity_counter.update(electricity_counter_params)
       redirect_to apartment_path @apartment
+      flash[:success] = "Дані оновлено"
     else
+      flash[:danger] = "Будь-ласка, спробуйте ще "
       render :edit, status: :unprocessable_entity
     end
   end
@@ -41,6 +43,7 @@ class ElectricityCountersController < ApplicationController
     @apartment = Apartment.find(params[:apartment_id])
     @electricity_counter = @apartment.electricity_counters.find(params[:id])
     @electricity_counter.destroy
+    flash[:success] = "Видалено"
     redirect_to apartment_path @apartment
 
   end

@@ -32,7 +32,9 @@ class WaterCountersController < ApplicationController
 
     if @water_counter.update(water_counter_params)
       redirect_to apartment_path @apartment
+      flash[:success] = "Дані оновлено"
     else
+      flash[:danger] = "Будь-ласка, спробуйте ще "
       render :edit, status: :unprocessable_entity
     end
   end
@@ -41,6 +43,7 @@ class WaterCountersController < ApplicationController
     @apartment = Apartment.find(params[:apartment_id])
     @water_counter = @apartment.water_counters.find(params[:id])
     @water_counter.destroy
+    flash[:success] = "Видалено"
     redirect_to apartment_path @apartment
 
   end

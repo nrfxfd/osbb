@@ -8,7 +8,7 @@
 <br>
 <br>
 
-<table width="200"  cellspacing="2" cellpadding="4" border="2" >
+<table width="300"  cellspacing="2" cellpadding="4" border="2" >
   <tr bgcolor="#c0c0c0" >
       <th > №квартири </th>
       <th> Прізвище  </th>
@@ -20,29 +20,26 @@
       <th> Орендар   </th>
       <th></th>
       <th></th>
+      <th></th>
   </tr>
-
+  <%= form_with model: [@apartment, @resident] do |form| %>
   <tr>
     <td><%= @resident.apartment_number %></td>
-    <td><%= @resident.lastname %></td>
+    <td><%= @resident.lastname%></td>
     <td><%= @resident.name %></td>
     <td><%= @resident.surname %></td>
-    <td><%= @resident.phone %></td>
+    <td><div ><%= form.telephone_field(:phone,{:size => 13, method: :patch})%></td></div>
     <td><%= @resident.birthday %></td>
     <td><%= @resident.owner %></td>
     <td><%= @resident.tenant %></td>
-    <td><%= link_to 'Змінити', edit_apartment_resident_path(@apartment, resident: @resident)%></td>
+    <td> <%= form.submit  ({:class => 'btn btn-success', :value => 'Зберегти'})%></td>
+
     <% if current_apartment.admin?  %>
+    <td><%= link_to 'Змінити', edit_apartment_resident_path(@apartment, resident: @resident)%></td>
     <td><%= link_to ' Видалити', apartment_resident_path(@apartment, resident: @resident),
                     method: :delete,
                     data: { confirm: "Ви впевнені?" } %></td>
     <% end %>
   </tr>
-
+  <%end %>
 </table>
-
-
-
-
-
-

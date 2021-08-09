@@ -28,8 +28,10 @@ class ResidentsController < ApplicationController
     @resident = @apartment.residents.find(params[:id])
 
     if @resident.update(resident_params)
+      flash[:success] = "Дані оновлено"
       redirect_to apartment_path @apartment
     else
+      flash[:danger] = "Будь-ласка, спробуйте ще "
       render :edit, status: :unprocessable_entity
     end
   end
@@ -39,6 +41,7 @@ class ResidentsController < ApplicationController
     @apartment = Apartment.find(params[:apartment_id])
     @resident = @apartment.residents.find(params[:id])
     @resident.destroy
+    flash[:success] = "Видалено"
     redirect_to apartment_path @apartment
 
   end
