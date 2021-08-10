@@ -17,7 +17,7 @@
 
   <tr>
     <td><%= link_to apartment.apartment_number, apartment %></td>
-    <td><%=  apartment.residents.first%>.</td>
+    <td><%#=  apartment.residents.first.lastname %>.</td>
     <td><%= apartment.apartment_area %></td>
     <!--Count without tenant-->
     <td><%= apartment.residents.where(:tenant => false ).count %></td>
