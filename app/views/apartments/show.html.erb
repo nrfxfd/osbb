@@ -1,6 +1,14 @@
 <br>
 <br>
-<caption>Квартира № <%= @apartment.apartment_number %></caption>
+<caption>Квартира № <%= @apartment.apartment_number %>
+
+  <% if defined?(@apartment.residents.first.lastname)  %>
+
+    <%= @apartment.residents.first.lastname %> <%= @apartment.residents.first.name[0] %>.<%= @apartment.residents.first.surname[0] %>.
+
+  <% end %>
+
+</caption>
 <br>
 
 <table width="200"  cellspacing="0" cellpadding="5" border="1"  >

@@ -17,9 +17,15 @@
 
   <tr>
     <td><%= link_to apartment.apartment_number, apartment %></td>
-    <td><%=  apartment.residents.first%>.</td>
+
+    <% if defined?(apartment.residents.first.lastname)  %>
+
+       <td nowrap><%= apartment.residents.first.lastname %> <%= apartment.residents.first.name[0] %>.<%= apartment.residents.first.surname[0] %>.</td>
+
+    <% end %>
+
     <td><%= apartment.apartment_area %></td>
-    <!--Count without tenant-->
+    <!--  Number of residents  without tenant-->
     <td><%= apartment.residents.where(:tenant => false ).count %></td>
     <td><%= apartment.heating_counter %></td>
     <td><%= apartment.water_counter%></td>
