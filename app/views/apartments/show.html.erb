@@ -1,6 +1,14 @@
 <br>
 <br>
-<caption>Квартира № <%= @apartment.apartment_number %></caption>
+<caption>Квартира № <%= @apartment.apartment_number %>
+
+  <% if defined?(@apartment.residents.first.lastname)  %>
+
+    <%= @apartment.residents.first.lastname %> <%= @apartment.residents.first.name[0] %>.<%= @apartment.residents.first.surname[0] %>.
+
+  <% end %>
+
+</caption>
 <br>
 
 <table width="200"  cellspacing="0" cellpadding="5" border="1"  >
@@ -11,7 +19,7 @@
     <th></th>
     <th></th>
   </tr>
-  <tr>
+  <tr  align="center">
     <td><%= @apartment.apartment_area %></td>
     <!--Count only owner family without tenant(necessary to pay for garbage removal)-->
     <td><%= @apartment.residents.where(:tenant => false ).count %></td>

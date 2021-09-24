@@ -17,14 +17,19 @@
 
   <tr>
     <td><%= link_to apartment.apartment_number, apartment %></td>
-    <td><%#=  apartment.residents.first.lastname %>.</td>
-    <td><%= apartment.apartment_area %></td>
-    <!--Count without tenant-->
-    <td><%= apartment.residents.where(:tenant => false ).count %></td>
-    <td><%= apartment.heating_counter %></td>
-    <td><%= apartment.water_counter%></td>
-    <td><%= apartment.electricity_counter%></td>
-      <td><%= apartment.arrears%></td>
+
+    <% if defined?(apartment.residents.first.lastname)  %>
+
+       <td nowrap><%= apartment.residents.first.lastname %> <%= apartment.residents.first.name[0] %>.<%= apartment.residents.first.surname[0] %>.</td>
+
+    <% end %>
+
+    <td  align="center"><%= apartment.apartment_area %></td>
+    <!--  Number of residents  without tenant-->
+    <td  align="center"><%= apartment.residents.where(:tenant => false ).count %></td>
+    <td  align="center"><%= apartment.water_counter%></td>
+    <td  align="center"><%= apartment.electricity_counter%></td>
+    <td  align="center"><%= apartment.arrears%></td>
 
     <% end %>
   </tr>
