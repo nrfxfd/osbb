@@ -24,13 +24,12 @@
 
     <% end %>
 
-    <td><%= apartment.apartment_area %></td>
+    <td  align="center"><%= apartment.apartment_area %></td>
     <!--  Number of residents  without tenant-->
-    <td><%= apartment.residents.where(:tenant => false ).count %></td>
-    <td><%= apartment.heating_counter %></td>
-    <td><%= apartment.water_counter%></td>
-    <td><%= apartment.electricity_counter%></td>
-      <td><%= apartment.arrears%></td>
+    <td  align="center"><%= apartment.residents.where(:tenant => false ).count %></td>
+    <td  align="center"><%= apartment.water_counter%></td>
+    <td  align="center"><%= apartment.electricity_counter%></td>
+    <td  align="center"><%= apartment.arrears%></td>
 
     <% end %>
   </tr>
