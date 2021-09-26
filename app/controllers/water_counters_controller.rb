@@ -12,7 +12,12 @@ class WaterCountersController < ApplicationController
 
   def new
     @apartment = Apartment.find(params[:apartment_id])
-    @water_counter = @apartment.water_counters.new
+    if @apartment.water_counters.exists?
+      flash[:danger] = "Ця дія заборонена"
+      redirect_to apartment_path @apartment
+    else
+      @water_counter = @apartment.water_counters.new
+    end
   end
 
   def create
@@ -31,8 +36,13 @@ class WaterCountersController < ApplicationController
     @water_counter = @apartment.water_counters.find(params[:id])
 
     if @water_counter.update(water_counter_params)
-      redirect_to apartment_path @apartment
-      flash[:success] = "Дані оновлено"
+      if current_apartment != @apartment
+        redirect_to apartments_path
+        flash[:success] = "Дані оновлено"
+      else
+        redirect_to apartment_path @apartment
+        flash[:success] = "Дані оновлено"
+      end
     else
       flash[:danger] = "Будь-ласка, спробуйте ще "
       render :edit, status: :unprocessable_entity

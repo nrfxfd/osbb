@@ -28,7 +28,7 @@
     <td><%= @resident.lastname%></td>
     <td><%= @resident.name %></td>
     <td><%= @resident.surname %></td>
-    <td><div ><%= form.telephone_field(:phone,{:size => 13, method: :patch})%></td></div>
+    <td nowrap><%= form.telephone_field(:phone,{:maxlength => 18, method: :patch})%></td>
     <td><%= @resident.birthday %></td>
     <td><%= @resident.owner %></td>
     <td><%= @resident.tenant %></td>
