@@ -222,7 +222,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt
   bootsnap (>= 1.4.4)
-  bootstrap (~> 5.0.1)
+  bootstrap
   bootstrap-sass
   bootstrap-will_paginate
   byebug
