@@ -5,7 +5,7 @@
     <%= form_for(:session, url: login_path) do |f| %>
 
       <%= f.label :'№ квартири' %>
-      <%= f.number_field :apartment_number, class: 'form-control', in: 1..99 %>
+      <%= f.number_field :apartment_number, class: 'form-control', in: 1..999 %>
 
       <%= f.label :'пароль' %>
       <%= f.password_field :password, class: 'form-control' %>

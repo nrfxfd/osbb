@@ -1,5 +1,11 @@
 
-    <td><%= link_to water_counter.value,[water_counter.apartment, water_counter]%></td>
+<%= form_with model: [water_counter.apartment, water_counter] do |form| %>
+  <td  align="center"><%= form.number_field(:value,{:max => 999999, method: :patch})%></td>
+  <td> <%= form.submit  ({:class => 'btn btn-success', :value => 'Зберегти'})%></td>
+<% end %>
+<% if current_apartment.admin? %>
+  <td><%= link_to "Змінити ",[water_counter.apartment, water_counter]%></td>
+<% end %>
 
 
 
