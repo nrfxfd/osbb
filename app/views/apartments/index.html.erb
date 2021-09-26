@@ -8,30 +8,61 @@
     <th> Власник</th>
     <th> площа, м кв. </th>
     <th> кількість мешканців </th>
-    <th> електроенергія, кВт/год  </th>
-    <th> вода, м куб. </th>
     <th> баланс, грн  </th>
+    <th> електроенергія, кВт/год  </th>
+    <th> </th>
+    <th> вода, м куб. </th>
+    <th> </th>
+
   </tr>
 
-    <% @apartments  .each do |apartment| %>
+  <% @apartments  .each do |apartment| %>
 
   <tr>
     <td><%= link_to apartment.apartment_number, apartment %></td>
 
     <% if defined?(apartment.residents.first.lastname)  %>
-
-       <td nowrap><%= apartment.residents.first.lastname %> <%= apartment.residents.first.name[0] %>.<%= apartment.residents.first.surname[0] %>.</td>
-
+      <td nowrap><%= apartment.residents.first.lastname %> <%= apartment.residents.first.name[0] %>.<%= apartment.residents.first.surname[0] %>.</td>
+    <% else %>
+      <td align="center"><% nil %></td>
     <% end %>
 
-    <td  align="center"><%= apartment.apartment_area %></td>
+    <% if  apartment.apartment_area != nil %>
+      <td  align="center"><%= apartment.apartment_area %></td>
+      <% else %>
+      <td align="center"><% nil %></td>
+    <% end %>
+
     <!--  Number of residents  without tenant-->
-    <td  align="center"><%= apartment.residents.where(:tenant => false ).count %></td>
-    <td  align="center"><%= apartment.water_counter%></td>
-    <td  align="center"><%= apartment.electricity_counter%></td>
-    <td  align="center"><%= apartment.arrears%></td>
+      <td  align="center"><%= apartment.residents.where(:tenant => false ).count %></td>
 
+      <td  align="center"><%= apartment.arrears%></td>
+
+
+    <% if defined?(apartment.electricity_counters.first.value)  %>
+      <%= form_with model: [apartment, apartment.electricity_counters.first] do |form| %>
+        <td  align="center"><%= form.number_field(:value,{:max => 999999, method: :patch})%></td>
+        <td> <%= form.submit  ({:class => 'btn btn-success', :value => 'Зберегти'})%></td>
+      <% end %>
+    <% else %>
+      <td align="center"><% nil %></td>
     <% end %>
+
+
+
+
+    <% if defined?(apartment.water_counters.first.value)  %>
+      <%= form_with model: [apartment, apartment.water_counters.first] do |form| %>
+        <td  align="center"><%= form.number_field(:value,{:max => 999999,method: :patch})%></td>
+        <td> <%= form.submit  ({:class => 'btn btn-success', :value => 'Зберегти'})%></td>
+      <% end %>
+    <% else %>
+      <td align="center"><% nil %></td>
+    <% end %>
+
+  <% end %>
+
+
   </tr>
 
 </table>
