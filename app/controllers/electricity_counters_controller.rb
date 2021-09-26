@@ -12,7 +12,12 @@ class ElectricityCountersController < ApplicationController
 
   def new
    @apartment = Apartment.find(params[:apartment_id])
-   @electricity_counter = @apartment.electricity_counters.new
+   if @apartment.electricity_counters.exists?
+     flash[:danger] = "Ця дія заборонена"
+     redirect_to apartment_path @apartment
+   else
+    @electricity_counter = @apartment.electricity_counters.new
+   end
   end
 
   def create
@@ -31,8 +36,13 @@ class ElectricityCountersController < ApplicationController
     @electricity_counter = @apartment.electricity_counters.find(params[:id])
 
     if @electricity_counter.update(electricity_counter_params)
-      redirect_to apartment_path @apartment
-      flash[:success] = "Дані оновлено"
+      if current_apartment != @apartment
+        redirect_to apartments_path
+        flash[:success] = "Дані оновлено"
+      else
+        redirect_to apartment_path @apartment
+        flash[:success] = "Дані оновлено"
+      end
     else
       flash[:danger] = "Будь-ласка, спробуйте ще "
       render :edit, status: :unprocessable_entity

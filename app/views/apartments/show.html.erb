@@ -45,13 +45,13 @@
 <table width="400"  cellspacing="0" cellpadding="5" border="1">
 
   <tr >
-    <th bgcolor="#c0c0c0"> <%=link_to_if(current_apartment.admin?, "Електроенергія", new_apartment_electricity_counter_path(@apartment),
+    <th bgcolor="#c0c0c0"> <%=link_to_if(current_apartment.admin? & !@apartment.electricity_counters.exists?, "Електроенергія", new_apartment_electricity_counter_path(@apartment),
                                                            data: { confirm: "Додати лічильник електроенергії?" })%> </th>
     <td><%= render @apartment.electricity_counters %></td>
 
   </tr>
   <tr>
-    <th  bgcolor="#c0c0c0"> <%=link_to_if(current_apartment.admin?,"Вода  ", new_apartment_water_counter_path(@apartment),
+    <th  bgcolor="#c0c0c0"> <%=link_to_if(current_apartment.admin? & !@apartment.water_counters.exists?,"Вода  ", new_apartment_water_counter_path(@apartment),
                                                  data: { confirm: "Додати лічильник води?" }) %> </th>
     <td><%= render @apartment.water_counters %></td>
     <td></td>
