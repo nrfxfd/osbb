@@ -1,7 +1,11 @@
 
-
-  <td><%= link_to electricity_counter.value,[electricity_counter.apartment, electricity_counter]%></td>
-
+  <%= form_with model: [electricity_counter.apartment, electricity_counter] do |form| %>
+    <td  align="center"><%= form.number_field(:value,{:max => 999999, method: :patch})%></td>
+    <td> <%= form.submit  ({:class => 'btn btn-success', :value => 'Зберегти'})%></td>
+  <% end %>
+  <% if current_apartment.admin? %>
+  <td><%= link_to "Змінити ",[electricity_counter.apartment, electricity_counter]%></td>
+  <% end %>
 
 
 

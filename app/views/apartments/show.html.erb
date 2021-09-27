@@ -1,74 +1,51 @@
-<br>
-<br>
-<caption>Квартира № <%= @apartment.apartment_number %>
+<caption><h3>Показники лічильників кв. № <%= @apartment.apartment_number %></h3></caption>
+<table width="400"  cellspacing="0" cellpadding="5" border="1">
+  <tr >
+    <th bgcolor="#c0c0c0"> <%=link_to_if(current_apartment.admin? & !@apartment.electricity_counters.exists?, "Електроенергія", new_apartment_electricity_counter_path(@apartment),
+                                         data: { confirm: "Додати лічильник електроенергії?" })%> </th>
+    <td><%= render @apartment.electricity_counters %></td>
+  </tr>
+  <tr>
+    <th  bgcolor="#c0c0c0"> <%=link_to_if(current_apartment.admin? & !@apartment.water_counters.exists?,"Вода  ", new_apartment_water_counter_path(@apartment),
+                                          data: { confirm: "Додати лічильник води?" }) %> </th>
+    <td><%= render @apartment.water_counters %></td>
+    <td></td>
+  </tr>
+</table>
+<br />&nbsp;<br />
 
-  <% if defined?(@apartment.residents.first.lastname)  %>
-
-    <%= @apartment.residents.first.lastname %> <%= @apartment.residents.first.name[0] %>.<%= @apartment.residents.first.surname[0] %>.
-
-  <% end %>
-
-</caption>
-<br>
-
+<caption><h3>Квартира № <%= @apartment.apartment_number %>
+    <% if defined?(@apartment.residents.first.lastname)  %>
+      <%= @apartment.residents.first.lastname %> <%= @apartment.residents.first.name[0] %>.<%= @apartment.residents.first.surname[0] %>.
+    <% end %></h3></caption>
 <table width="200"  cellspacing="0" cellpadding="5" border="1"  >
-  <tr bgcolor="#c0c0c0" >
+  <thead align="center" bgcolor="#c0c0c0">
     <th> площа, м кв. </th>
     <th> кількість мешканців </th>
     <th> баланс, грн  </th>
     <th></th>
     <th></th>
-  </tr>
-  <tr  align="center">
+  </thead>
+  <tbody align="center" >
+  <tr >
     <td><%= @apartment.apartment_area %></td>
     <!--Count only owner family without tenant(necessary to pay for garbage removal)-->
     <td><%= @apartment.residents.where(:tenant => false ).count %></td>
     <td><%= @apartment.arrears %></td>
-    <td><%= link_to "Змінити пароль", edit_apartment_path(@apartment) %></td>
-
-<!-- To forbid delete self-->
+<!--for admin -->
     <% if current_apartment != @apartment  %>
+    <td><%= link_to "Змінити пароль", edit_apartment_path(@apartment) %></td>
+<!-- To forbid delete self-->
       <td><%= link_to "Видалити", apartment_path(@apartment),
                     method: :delete,
-                    data: { confirm: "Ви впевнені?" } %></td>
+                    data: { confirm: "Ви впевнені? Всю інформацію про дану квартиру буде ВИДАЛЕНО!!!" } %></td>
     <% end %>
   </tr>
+  </tbody>
 </table>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<caption>Показники лічильників кв. № <%= @apartment.apartment_number %></caption>
-
-<table width="400"  cellspacing="0" cellpadding="5" border="1">
-
-  <tr >
-    <th bgcolor="#c0c0c0"> <%=link_to_if(current_apartment.admin? & !@apartment.electricity_counters.exists?, "Електроенергія", new_apartment_electricity_counter_path(@apartment),
-                                                           data: { confirm: "Додати лічильник електроенергії?" })%> </th>
-    <td><%= render @apartment.electricity_counters %></td>
-
-  </tr>
-  <tr>
-    <th  bgcolor="#c0c0c0"> <%=link_to_if(current_apartment.admin? & !@apartment.water_counters.exists?,"Вода  ", new_apartment_water_counter_path(@apartment),
-                                                 data: { confirm: "Додати лічильник води?" }) %> </th>
-    <td><%= render @apartment.water_counters %></td>
-    <td></td>
-  </tr>
-
-
-
-</table>
-<br>
-<br>
-<br>
-<br>
-<br>
-<caption>Мешканці квартири № <%= @apartment.apartment_number %></caption>
-
+<br />&nbsp;<br />
+<caption><h3>Мешканці квартири № <%= @apartment.apartment_number %></h3></caption>
 <table width="300"  cellspacing="0" cellpadding="5" border="1">
-
   <tr bgcolor="#c0c0c0">
     <th> №квартири </th>
     <th> Прізвище  </th>
@@ -85,11 +62,9 @@
 </table>
 <br>
 
-
 <% if current_apartment.admin?  %>
     <%= link_to "Додати мешканця", new_apartment_resident_path(@apartment) %>
 <% end %>
-<br>
 <br>
 
 

@@ -15,7 +15,7 @@
   </tr>
   <%= form_with model: [@apartment, @water_counter] do |form| %>
   <tr>
-    <td><div ><%= form.number_field(:value,{:maxlength => 7,method: :patch})%></td></div>
+    <td><div ><%= form.number_field(:value,{:max => 999999,:size => 7,method: :patch})%></td></div>
     <td> <%= form.submit  ({:class => 'btn btn-success', :value => 'Зберегти'})%></td>
     <% end %>
 
@@ -23,7 +23,7 @@
     <% if current_apartment.admin?  %>
       <td><%= link_to ' Видалити', apartment_water_counter_path(@apartment, water_counter: @water_counter),
                     method: :delete,
-                    data: { confirm: "Ви впевнені?" } %></td>
+                    data: { confirm: "Ви впевнені? Лічильник буде видалено!!!" } %></td>
     <% end %>
   </tr>
 
