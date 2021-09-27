@@ -19,14 +19,15 @@
       <%= @apartment.residents.first.lastname %> <%= @apartment.residents.first.name[0] %>.<%= @apartment.residents.first.surname[0] %>.
     <% end %></h3></caption>
 <table width="200"  cellspacing="0" cellpadding="5" border="1"  >
-  <tr bgcolor="#c0c0c0" >
+  <thead align="center" bgcolor="#c0c0c0">
     <th> площа, м кв. </th>
     <th> кількість мешканців </th>
     <th> баланс, грн  </th>
     <th></th>
     <th></th>
-  </tr>
-  <tr  align="center">
+  </thead>
+  <tbody align="center" >
+  <tr >
     <td><%= @apartment.apartment_area %></td>
     <!--Count only owner family without tenant(necessary to pay for garbage removal)-->
     <td><%= @apartment.residents.where(:tenant => false ).count %></td>
@@ -40,6 +41,7 @@
                     data: { confirm: "Ви впевнені? Всю інформацію про дану квартиру буде ВИДАЛЕНО!!!" } %></td>
     <% end %>
   </tr>
+  </tbody>
 </table>
 <br />&nbsp;<br />
 <caption><h3>Мешканці квартири № <%= @apartment.apartment_number %></h3></caption>
@@ -63,7 +65,6 @@
 <% if current_apartment.admin?  %>
     <%= link_to "Додати мешканця", new_apartment_resident_path(@apartment) %>
 <% end %>
-<br>
 <br>
 
 
