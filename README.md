@@ -50,6 +50,6 @@ Views.
 
 osbb/app/views/.......
 для кожного контроллера:apartments(квартири), residents (мешканці), counters...(лічильники) є свої представлення (views):
-  -show.html.erb   READ
-  -new.html.erb    CREATE
-  -edit.html.erb   UPDATE
+- show.html.erb   READ
+- new.html.erb    CREATE
+- edit.html.erb   UPDATE
